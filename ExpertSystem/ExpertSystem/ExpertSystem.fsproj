@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net45</TargetFramework>
+    <Optimize>true</Optimize>
+    <Tailcalls>true</Tailcalls>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ExpertSystem.fs" />
+    <None Include="Excess.fs" />
+    <Compile Include="Expander.fs" />
+    <!-- <Compile Include="Expander2.fs" /> -->
+    <Compile Include="ExpanderTest.fs" />
+    <Compile Include="File1.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="..\..\..\RecipleInputForm\bin\Debug\RecipleInputForm.dll" />
+    <Reference Include="E:\Project\FsharpMyExtension\FsharpMyExtension\FsharpMyExtension\bin\Debug\net45\FsharpMyExtension.dll" />
+  </ItemGroup>
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
+</Project>

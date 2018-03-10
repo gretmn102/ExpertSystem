@@ -1,0 +1,86 @@
+item(Deathbringer Pickaxe)
+item Deathbringer Pickaxe
+craft(item(Deathbringer Pickaxe), [craftingStation(item(Lead anvil)), craftingStation(item(Iron anvil))], [ingredient(item(Crimtane Bar), count(12)), ingredient(item(Tissue Sample), count(6))])
+
+craftf
+	Deathbringer Pickaxe
+	oneOf [Lead anvil; Iron anvil]
+	[
+		Crimtane Bar, 12;
+		Tissue Sample, 6;
+	]
+
+craft
+	(item Deathbringer Pickaxe), 
+	oneOf [craftingStation (item Lead anvil); craftingStation (item Iron anvil)], 
+	[ingredient (item Crimtane Bar), (count 12); ingredient (item Tissue Sample), (count 6)]
+	
+craftf
+	Bed, 1;
+	Sawmill;
+	[
+		Wood, 15;
+		Silk, 5;
+	]
+
+craft 
+	(item Bed),
+	[craftingStation (item Sawmill)], 
+	[ingredient (item Wood), (count 15); ingredient (item Silk), (count 5)]
+	
+craftf
+	(Sawmill, 1)
+	(oneOf WorkBench)
+	[
+		Wood, 10;
+		oneOf [Iron Bar, 2; Lead Bar, 2]; 
+		Chain, 1;
+	]
+
+result:
+{
+	craft
+		make (item Sawmill) (count 1)
+		[craftingStation (oneOf WorkBench)]
+		[
+			ingredient (item Wood), (count 10);
+			ingredient (item Iron Bar), (count 2);
+			ingredient (item Chain), (count 1);
+		]
+		
+	craft
+		make (item Sawmill) (count 1)
+		[craftingStation (oneOf WorkBench)]
+		[
+			ingredient (item Wood), (count 10);
+			ingredient (item Lead Bar), (count 2);
+			ingredient (item Chain), (count 1);
+		]
+}
+mining (item Wood), tree
+
+craft
+	make (item Silk) (count 1)
+	[craftingStation (item Loom)]
+	[ingredient (item Cobweb), (count 7)]
+	
+craft
+	make (item Loom) (count 1)
+	[craftingStation (item Sawmill)]
+	[ingredient (item Wood), (count 12)]
+	
+
+item(Crimtane Bar)
+craft(item(Crimtane Bar), [craftingStation(item(Furnace))], [ingredient(item(Crimtane Ore), count(3))])
+
+
+item: string
+count: int
+ingredient: item, count
+make: item, count
+craftingStation: item
+
+craftf: (string, int) -> string -> (string, int) list
+craft: make, craftingStation list, ingredient list
+
+find: item, {craft, drop, fishing, mining} list
