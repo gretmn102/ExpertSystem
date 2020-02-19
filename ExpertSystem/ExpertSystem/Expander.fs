@@ -1,6 +1,6 @@
 ﻿module Expander
+open FsharpMyExtension
 open FsharpMyExtension.Tree
-open FsharpMyExtension.FSharpExt
 
 // let expand reciples =
 //     let rec expa last ((name, count) as curr) =
@@ -15,8 +15,6 @@ open FsharpMyExtension.FSharpExt
 //         else Tree.Node(curr, [])
 //     expa []
 
-
-open FsharpMyExtension.Map
 module expand2 =
 
     let expandNotMod reciples =

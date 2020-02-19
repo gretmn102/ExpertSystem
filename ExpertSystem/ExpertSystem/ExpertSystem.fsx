@@ -1,8 +1,16 @@
-module ExpertSystem
+#I @"e:\Project\FsharpMyExtension\FsharpMyExtension\FsharpMyExtension\bin\Debug\net461\"
+#r @"FParsecCS.dll"
+#r @"FParsec.dll"
+#r @"Fuchu.dll"
+#r @"HtmlAgilityPack.dll"
+#r @"Newtonsoft.Json.dll"
+#r @"Newtonsoft.Json.Bson.dll"
+#r @"FsharpMyExtension.dll"
 
 #if INTERACTIVE
 #load "expander.fs"
 #endif
+open FsharpMyExtension
 type ReciplesType = (string * (int * (string * int) list)) list
 
 // что делать с "forge hammer"?

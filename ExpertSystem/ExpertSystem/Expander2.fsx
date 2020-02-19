@@ -1,13 +1,17 @@
-﻿module Expander2
+﻿#I @"e:\Project\FsharpMyExtension\FsharpMyExtension\FsharpMyExtension\bin\Debug\net461\"
+#r @"FParsecCS.dll"
+#r @"FParsec.dll"
+#r @"Fuchu.dll"
+#r @"HtmlAgilityPack.dll"
+#r @"Newtonsoft.Json.dll"
+#r @"Newtonsoft.Json.Bson.dll"
+#r @"FsharpMyExtension.dll"
 
 #if INTERACTIVE
 #load "expander.fs"
 #endif
+open FsharpMyExtension
 open FsharpMyExtension.Tree
-open FsharpMyExtension.FSharpExt
-open FsharpMyExtension.List
-open FsharpMyExtension.Map
-open FsharpMyExtension.Option
 
 type NameProd = string
 type CountProd = int
@@ -78,7 +82,7 @@ let recipWithPrices =
     fun m -> (makeBased >> remNotPrice) m
 
 let awer given recip =
-    recip |> Map.fold (fun st _ x -> if Map.containsKey (Prod2.getName x) given then st else Prod2.getIngr x |> Map.fold (fun st name count -> Map.tryFind name st |> Option.map (mapFst (fun xs -> (Prod2.getName x,count)::xs) >> fun x -> Map.add name x st) |> Option.getOrDef (fun () -> st) ) st ) given
+    recip |> Map.fold (fun st _ x -> if Map.containsKey (Prod2.getName x) given then st else Prod2.getIngr x |> Map.fold (fun st name count -> Map.tryFind name st |> Option.map (mapFst (fun xs -> (Prod2.getName x,count)::xs) >> fun x -> Map.add name x st) |> Option.defaultWith (fun () -> st) ) st ) given
 
 let p recip give given = recip |> Map.fold (fun st _ x -> if Map.containsKey (Prod2.getName x) given then st else if Prod2.getIngr x |> Map.forall (konst <| fun name -> give |> List.exists (fst >> (=) name)) then on Prod2.getName Prod2.getPrice x :: st else st ) []
 

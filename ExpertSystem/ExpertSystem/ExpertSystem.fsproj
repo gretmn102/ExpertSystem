@@ -12,12 +12,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Excess.fs" />
+    <!-- <None Include="Excess.fs" /> -->
     <Compile Include="Expander.fs" />
-    <Compile Include="Expander2.fs" />
-    <Compile Include="ExpanderTest.fs" />
-    <Compile Include="File1.fs" />
-    <Compile Include="ExpertSystem.fs" />
+    <!-- <Compile Include="Expander2.fs" /> -->
+    <!-- <Compile Include="ExpanderTest.fs" /> -->
+    <!-- <Compile Include="File1.fs" /> -->
+    <!-- <Compile Include="ExpertSystem.fs" /> -->
     <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,14 @@
-﻿module Excess
+﻿#I @"e:\Project\FsharpMyExtension\FsharpMyExtension\FsharpMyExtension\bin\Debug\net461\"
+#r @"FParsecCS.dll"
+#r @"FParsec.dll"
+#r @"Fuchu.dll"
+#r @"HtmlAgilityPack.dll"
+#r @"Newtonsoft.Json.dll"
+#r @"Newtonsoft.Json.Bson.dll"
+#r @"FsharpMyExtension.dll"
+open FsharpMyExtension
+open FsharpMyExtension.Tree
+
 module List = 
     let remove x xs = 
         let rec f acc = function
@@ -19,10 +29,10 @@ module SimpleCase =
 
             let ingrs = crafts.[name]
             if valid last ingrs then
-                Tree.T(name, List.map (expa (name::last)) ingrs)
-            else Tree.T(name, [])
+                Tree.Node(name, List.map (expa (name::last)) ingrs)
+            else Tree.Node(name, [])
         expa []
-    expand "b" |> Tree.visualize |> printfn "%s"
+    expand "b" |> Tree.visualize (sprintf "%A") |> printfn "%s"
     (*
     a
     └─b
@@ -61,10 +71,10 @@ module Case2 =
 
             let ingrs = crafts.[name] |> List.map (function n, c -> n, c*count)
             if valid last (List.map fst ingrs) then
-                 Tree.T(curr, List.map (expa (name::last)) ingrs)
-            else Tree.T(curr, [])
+                 Tree.Node(curr, List.map (expa (name::last)) ingrs)
+            else Tree.Node(curr, [])
         expa []
-    expand ("a", 1) |> Tree.visualize |> printfn "%s"
+    expand ("a", 1) |> Tree.visualize (sprintf "%A") |> printfn "%s"
     
     let assemble resources lst = 
         let f state (name, count) =
@@ -94,7 +104,7 @@ module Case2 =
     assert
         let req = ("a", 4)
         let t = expand req
-        t |> Tree.visualize |> printfn "%s"
+        t |> Tree.visualize (sprintf "%A") |> printfn "%s"
         let makes = Tree.notleafs t |> List.rev
         let resources = 
             let leafs = Tree.leafs t

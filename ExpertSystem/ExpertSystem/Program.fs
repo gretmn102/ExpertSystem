@@ -154,8 +154,6 @@ module form =
         System.IO.File.WriteAllLines("reciplesRaw.txt", List.map (sprintf "%A") reciples))
 
 [<STAThread; EntryPoint>]
-let main _ = 
-//    let s = serial.load "bd.dat" :?> ReciplesType
-//    Newtonsoft.Json.JsonConvert.SerializeObject(s, Newtonsoft.Json.Formatting.Indented) |> fun s -> System.IO.File.WriteAllText("bd.json", s)
+let main _ =
     Application.Run(form.form)
     0

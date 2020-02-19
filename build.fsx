@@ -3,97 +3,60 @@
 // --------------------------------------------------------------------------------------
 
 #r "./packages/FAKE/tools/FakeLib.dll"
-
-open Fake
 open System
-
+open Fake.IO.Globbing.Operators
+open Fake.Core
 // --------------------------------------------------------------------------------------
 // Build variables
 // --------------------------------------------------------------------------------------
-
-let buildDir  = "./build/"
-let appReferences = !! "/**/*.fsproj"
-let dotnetcliVersion = "2.0.0"
-let mutable dotnetExePath = "dotnet"
-
+let testPath = !! "**/test.fsproj" |> Seq.tryHead
 // --------------------------------------------------------------------------------------
 // Helpers
 // --------------------------------------------------------------------------------------
-
-let run' timeout cmd args dir =
-    if execProcess (fun info ->
-        info.FileName <- cmd
-        if not (String.IsNullOrWhiteSpace dir) then
-            info.WorkingDirectory <- dir
-        info.Arguments <- args
-    ) timeout |> not then
-        failwithf "Error while running '%s' with args: %s" cmd args
-
-let run = run' System.TimeSpan.MaxValue
-
-let runDotnet workingDir args =
-    let result =
-        ExecProcess (fun info ->
-            info.FileName <- dotnetExePath
-            info.WorkingDirectory <- workingDir
-            info.Arguments <- args) TimeSpan.MaxValue
-    if result <> 0 then failwithf "dotnet %s failed" args
+open Fake.DotNet
+let buildConf = DotNet.BuildConfiguration.Debug
+let dotnetSdk = lazy DotNet.install DotNet.Versions.Release_2_1_4
+let inline dtntSmpl arg = DotNet.Options.lift dotnetSdk.Value arg
 
 // --------------------------------------------------------------------------------------
 // Targets
 // --------------------------------------------------------------------------------------
-
-Target "Clean" (fun _ ->
-    CleanDirs [buildDir]
+Target.create "BuildTest" (fun _ ->
+    testPath
+    |> Option.defaultWith (fun () -> failwith "'**/test.fsproj' not found")
+    |> System.IO.Path.GetDirectoryName
+    |> DotNet.build (fun x ->
+        { x with Configuration = buildConf }
+        |> dtntSmpl)
+    // appReferences
+    // |> Seq.iter (fun p ->
+    //     let dir = System.IO.Path.GetDirectoryName p
+    //     DotNet.build (dtntWorkDir root) dir
+    // )
 )
 
-Target "InstallDotNetCLI" (fun _ ->
-    dotnetExePath <- DotNetCli.InstallDotNetSDK dotnetcliVersion
-)
-
-Target "Restore" (fun _ ->
-    appReferences
-    |> Seq.find (fun p ->
-        System.IO.Path.GetFileName p = "Test.fsproj"
-    )
-    |> fun p ->
+Target.create "Test" (fun _ ->
+    testPath
+    |> Option.bind (fun p ->
         let dir = System.IO.Path.GetDirectoryName p
-        runDotnet dir "restore"
-)
-
-Target "Build" (fun _ ->
-    appReferences
-    |> Seq.find (fun p ->
-        System.IO.Path.GetFileName p = "Test.fsproj"
+        let d = sprintf @"bin\%A\net461\test.exe" buildConf
+        let dir = System.IO.Path.Combine(dir, d)
+        if System.IO.File.Exists dir then Some dir else None
     )
-    |> fun p ->
-        let dir = System.IO.Path.GetDirectoryName p
-        runDotnet dir "build"
-)
-
-Target "Test" (fun _ ->
-    appReferences
-    |> Seq.pick (fun p ->
-        let dir = System.IO.Path.GetDirectoryName p
-        let path = System.IO.Path.Combine(dir, @"bin\debug\net45\test.exe")
-        if System.IO.File.Exists path then
-            Some path
-        else None
-    )
-    |> fun path ->
+    |> Option.map (fun dir ->
         let result =
-            ExecProcess (fun info ->
-                info.FileName <- path) TimeSpan.MaxValue
-        if result <> 0 then failwith "tests failed"
+            CreateProcess.fromRawCommand dir []
+            |> Proc.run
+        if result.ExitCode <> 0 then failwith "tests failed"
+    )
+    |> Option.defaultWith (fun () -> failwith "test not found" )
 )
 
 // --------------------------------------------------------------------------------------
 // Build order
 // --------------------------------------------------------------------------------------
+open Fake.Core.TargetOperators
 
-"Clean"
-  ==> "InstallDotNetCLI"
-  ==> "Restore"
-  ==> "Build"
+"BuildTest"
   ==> "Test"
-RunTargetOrDefault "Test"
+Target.runOrDefault "Test"

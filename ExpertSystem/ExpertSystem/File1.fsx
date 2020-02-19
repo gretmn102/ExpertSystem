@@ -1,15 +1,20 @@
-﻿module File1
+﻿#I @"e:\Project\FsharpMyExtension\FsharpMyExtension\FsharpMyExtension\bin\Debug\net461\"
+#r @"FParsecCS.dll"
+#r @"FParsec.dll"
+#r @"Fuchu.dll"
+#r @"HtmlAgilityPack.dll"
+#r @"Newtonsoft.Json.dll"
+#r @"Newtonsoft.Json.Bson.dll"
+#r @"FsharpMyExtension.dll"
 
 #if INTERACTIVE
 #load "expander.fs"
 //#r @"..\..\..\RecipleInputForm\bin\Debug\RecipleInputForm.dll"
 #endif
 
+open FsharpMyExtension
 open FsharpMyExtension.Tree
-open FsharpMyExtension.Map
-open FsharpMyExtension.FSharpExt
-open FsharpMyExtension.Option
-open FsharpMyExtension.List
+
 type ReciplesType = (string * (int * (string * int) list)) list
 type 'a T = { Name:string; ProdCount:int; Ingr:(string*int) list; Price:'a }
 
@@ -43,6 +48,7 @@ let reciples =
 //        |> fun m -> Map.choose (fun _ x -> x.Price |> Option.bind (fun p -> if x.Ingr |> List.forall (fun (name, _ ) -> Map.find name m |> fun x -> Option.isSome x.Price) then Some { Name = x.Name; Price = p; ProdCount = x.ProdCount; Ingr = x.Ingr; } else None ) ) m
 let remNotPrice m = Map.choose (fun _ x -> x.Price |> Option.bind (fun p -> if x.Ingr |> List.forall (fun (name, _ ) -> Map.find name m |> fun x -> Option.isSome x.Price) then Some { Name = x.Name; Price = p; ProdCount = x.ProdCount; Ingr = x.Ingr; } else None ) ) m
 let print xs = Seq.iter (printfn "%A") xs
+
     //|> Map.fold (fun st k v -> match v.Price with Some p -> st | None -> st ) Map.empty
 (*    let res name =
     let xs = expand reciples (name, 1)
@@ -77,7 +83,7 @@ let given = give |> List.map (mapSnd (fun c -> [], c)) |> Map.ofList
 let inReciple x = reciples |> Map.filter (fun _ v -> v.Ingr |> List.exists (fst >> ((=) x)))
 
 let awer () =
-    recip |> Map.fold (fun st _ x -> if Map.containsKey x.Name given then st else x.Ingr |> List.fold (fun st (name, count) -> Map.tryFind name st |> Option.map (mapFst (fun xs -> (x.Name,count)::xs) >> fun x -> Map.add name x st) |> Option.getOrDef (fun () -> st) ) st )  given
+    recip |> Map.fold (fun st _ x -> if Map.containsKey x.Name given then st else x.Ingr |> List.fold (fun st (name, count) -> Map.tryFind name st |> Option.map (mapFst (fun xs -> (x.Name,count)::xs) >> fun x -> Map.add name x st) |> Option.defaultWith (fun () -> st) ) st )  given
 let p = recip |> Map.fold (fun st _ x -> if Map.containsKey x.Name given then st else if x.Ingr |> List.forall (fst >> fun name -> give |> List.exists (fst >> (=)name)) then (x.Name, x.Price)::st else st ) []
 
 let convertToMaple () =
@@ -106,7 +112,7 @@ module MySolve =
         |> List.map (mapFst Map.ofList)
     let len = List.length xs
     let pp = List.init len (on <| sprintf "x%i" <| fun _ -> 0) @ p
-    let ss = pp |> List.fold (fun st -> fst >> fun x -> xs |> List.map (fst >> Map.tryFind x >> Option.getOrDef (fun () -> 0)  ) |> fun ys -> (x, ys)::st ) []
+    let ss = pp |> List.fold (fun st -> fst >> fun x -> xs |> List.map (fst >> Map.tryFind x >> Option.defaultWith (fun () -> 0)  ) |> fun ys -> (x, ys)::st ) []
     let ss' = ss |> List.map snd |> List.trans |> List.map2 (fun x y -> [0] @ y @ [snd x]) give
     let pp' = pp |> List.map (snd >> (~-)) |> List.rev |> fun x -> [1] @ x @ [0]
     let res2 = ss' @ [pp']
