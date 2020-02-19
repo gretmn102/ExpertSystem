@@ -19,73 +19,27 @@ module Prod =
     let getProdCount { ProdCount = x } = x
     let getIngr { Ingr = x } = x
 
+/// а что оно делает?..
 let expand reciples = 
     let rec expa last ((name, count:CountProd) as curr) = 
-//        let p, ingrs = 
-//            //(((>>) ((*) >> (<<) comma)) ^< flip s ^< (>>) ((*) >> konst id) ^< flip Map.map) ingrs p
-//            Map.find name reciples |> fun { ProdCount = p; Ingr = ingrs } ->  // crafts.[name]
-//            p |> (float >> flip (/) (float count) >> ceil >> int >> //fun coeff ->
-//                s ((*) p >> comma) ((*) >> konst id >> flip Map.map ingrs)
-//            )
-        Map.find name reciples |> fun x -> 
-        x.ProdCount |> float |> (/) (float count) |> ceil |> int |>
+        let x = Map.find name reciples
+        float x.ProdCount / float count |> ceil |> int |>
         s (fun coeff ->
-            //(fun ingrs -> last |> List.forall ^| not ^< flip Map.containsKey ingrs)
-            cond ((|>) last ^< List.forall ^< (<<) not ^< flip Map.containsKey )
-                 (Map.toList >> List.map (expa <| name::last) >> uncurry Tree.Node (name, x.ProdCount * coeff))
-                 (fun x -> uncurry Tree.Node curr [])) //(konst id <| uncurry Tree.Node curr []))
-          //((*) >> konst id >> flip Map.map x.Ingr)
+            cond (fun ingrs ->
+                    List.forall (not << flip Map.containsKey ingrs) last )
+                 (Map.toList
+                  >> List.map (expa (name::last))
+                  >> uncurry Tree.Node (name, x.ProdCount * coeff))
+                 (fun _ -> uncurry Tree.Node curr []))
           (fun coeff -> Map.map (fun _ -> (*) coeff) x.Ingr)
-        (*if last |> List.forall ^| not ^< flip Map.containsKey ingrs then
-            Tree.Node((name, p), ingrs |> Map.toList |> List.map (expa (name::last)))
-        else Tree.Node(curr, []) *)
     expa []
 
 assert
     [ { Name = "a"; ProdCount = 1; Ingr = Map["b", 1]; }
       { Name = "b"; ProdCount = 1; Ingr = Map["c", 2]; }
-      { Name = "c"; ProdCount = 1; Ingr = Map[]; } ] |> Seq.map (fun x -> x.Name, x) |> Map.ofSeq |> flip expand ("a", 1)
+      { Name = "c"; ProdCount = 1; Ingr = Map[]; } ]
+    |> Seq.map (fun x -> x.Name, x) |> Map.ofSeq |> flip expand ("a", 1)
     true
-
-//assert
-//    let (^<<) = (<<)
-//    
-//    
-//    let s ingrs = //((|>) ingrs) ^<< Map.map ^<< konst id ^<< (*)
-//        (|>) ingrs << Map.map ^<< konst id ^<< (*) // = flip (Map.map ^<< konst id ^<< (*)) ingrs
-//        //(*) >> konst id >> flip Map.map ingrs
-//
-//    let m =
-//        [
-//            { Name = "a"; ProdCount = 2; Ingr = Map[ "b", 2; "c", 3 ]}
-//            { Name = "b"; ProdCount = 3; Ingr = Map[ "c", 1; ]}
-//            { Name = "c"; ProdCount = 1; Ingr = Map[] }
-//        ] |> List.map (fun x -> x.Name, x) |> Map.ofList
-//    expand m ("a", 1) |> Tree.visualize (sprintf "%A") |> printfn "%s"
-//    true
-//type T = { Name:string; ProdCount:int; Ingr:(NameProd*CountProd) list }
-//let expand2 reciples = 
-//    let rec expa last ((name, count) as curr) = 
-//        let valid xs ys = Set.intersect (set xs) (set ys) |> Set.isEmpty
-//
-//        let p, ingrs = 
-//            let { ProdCount = p; Ingr = ingrs } = Map.find name reciples // crafts.[name]
-//            let coeff = (float count/ float p) |> ceil |> int
-//            coeff*p, ingrs |> List.map (function n, c -> n, coeff * c)
-//        if valid last (List.map fst ingrs) then
-//                Tree.Node((name, p), List.map (expa (name::last)) ingrs)
-//        else Tree.Node(curr, [])
-//    expa []
-//Set.intersect (Set[1;2]) (Set[2;3;4])
-//let m =
-//    [
-//        { Name = "a"; ProdCount = 2; Ingr = [ "b", 2; "c", 3 ]}
-//        { Name = "b"; ProdCount = 3; Ingr = [ "c", 1; ]}
-//        { Name = "c"; ProdCount = 1; Ingr = [] }
-//    ] |> List.map (fun x -> x.Name, x) |> Map.ofList
-//expand2 m ("a", 1) |> Tree.visualize (sprintf "%A") |> printfn "%s"
-//
-//
 
 type 'a Prod2 = { P:Prod; Price:'a }
 
@@ -115,7 +69,7 @@ let reciples (lst: ReciplesType) =
 //    //reciples lst |> Map.map (fun name x -> failwith "" )
 
 
-let makeBased m = m |> s (fun reciples reciplesP -> reciples |> Map.map (fun name x -> expand reciplesP (name, Prod2.getProdCount x) |> fun t -> Tree.leafs t |> fun xs -> { x with P = { x.P with Ingr = Map.reducef fst (snd >> (+)) 0 Map.empty xs; ProdCount = Tree.get t |> snd }})) (Map.map <| konst id Prod2.getProd)
+let makeBased m = m |> s (fun reciples reciplesP -> reciples |> Map.map (fun name x -> expand reciplesP (name, Prod2.getProdCount x) |> fun t -> Tree.leafs t |> fun xs -> { x with P = { x.P with Ingr = Map.reducef fst (snd >> (+)) 0 Map.empty xs; ProdCount = Tree.getValue t |> snd }})) (Map.map <| konst id Prod2.getProd)
 
 
 let recipWithPrices = 
@@ -174,7 +128,3 @@ let asdf lst =
     reciples lst |> Map.fold (fun st k -> Prod2.getIngr >> Map.toSeq >> Map.reducef fst (fun _ v -> k::v) [] st) Map.empty
 //let given = give |> List.map (mapSnd (fun c -> [], c)) |> Map.ofList
 
-let xs = id >> (printf "eval..."; id) : 'a -> int
-
-let f x = if x = 10 then printf "eval true..."; x else printf "eval false..."; x
-let f' = cond ((=) 10) (printf "eval true..."; id) (konts id (printf "eval false..."))
