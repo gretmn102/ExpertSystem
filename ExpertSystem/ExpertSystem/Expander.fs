@@ -2,21 +2,26 @@
 open FsharpMyExtension
 open FsharpMyExtension.Tree
 
-// let expand reciples =
-//     let rec expa last ((name, count) as curr) =
-//         let valid xs ys = Set.intersect (set xs) (set ys) |> Set.isEmpty
+type ItemName = string
+type Ingredient = ItemName * int
+type Reciple =
+    {
+        Name:ItemName
+        // То, сколько получается в итоге предметов, если всё сделать по рецепту.
+        OutputCount:int
+        Ingredients: Ingredient list
+    }
 
-//         let p, ingrs =
-//             let p, ingrs = Map.find name reciples // crafts.[name]
-//             let coeff = (float count / float p) |> ceil |> int
-//             coeff*p, ingrs |> List.map (function n, c -> n, coeff * c)
-//         if valid last (List.map fst ingrs) then
-//                 Tree.Node((name, p), List.map (expa (name::last)) ingrs)
-//         else Tree.Node(curr, [])
-//     expa []
+[<Struct>]
+type 'ItemId Reciples when 'ItemId : comparison =
+    Reciples of Map<'ItemId, (int * ('ItemId * int) list)>
+let transformToNewDb path =
+    let oldDb:(string * (int * (string * int) list)) list = Json.desf path
+    Reciples(Map.ofList oldDb)
+    |> Json.serf path
+// transformToNewDb @"Info\OldDBs\terraria.json"
 
 module expand2 =
-
     let expandNotMod reciples =
         let rec expa last (name, count) =
             let valid xs ys = Set.intersect (set xs) (set ys) |> Set.isEmpty
@@ -85,7 +90,8 @@ module expand2 =
                         if x = 0 then None else Some(k, x))
                 f' (f t :: acc) (Tree.cutLeaf t)
         f' [] tree |> List.rev
-let expand2Start reciples (stocks:Map<'ItemId,int>) req =
+
+let expand2Start (Reciples reciples:'ItemId Reciples) (stocks:Map<'ItemId,int>) req =
     expand2.expandNotMod reciples req
     |> expand2.expand stocks
     |> snd

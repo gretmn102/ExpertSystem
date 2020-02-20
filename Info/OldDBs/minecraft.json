@@ -1,1644 +1,1337 @@
-[
-  {
-    "Item1": "EUFromFuelCanWithCoal",
-    "Item2": {
-      "Item1": 76440,
-      "Item2": [
-        {
-          "Item1": "fuel can",
-          "Item2": 1
-        },
-        {
-          "Item1": "coalfuel cell",
-          "Item2": 6
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "advanced alloy",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "compressor",
-          "Item2": 1
-        },
-        {
-          "Item1": "mixed metal ingot",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "advanced circuit",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "redstone",
-          "Item2": 4
-        },
-        {
-          "Item1": "lapis lazuli",
-          "Item2": 2
-        },
-        {
-          "Item1": "glowstone",
-          "Item2": 2
-        },
-        {
-          "Item1": "electronic circuit",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "advanced machine casing",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "steel plate",
-          "Item2": 4
-        },
-        {
-          "Item1": "advanced alloy",
-          "Item2": 2
-        },
-        {
-          "Item1": "carbon plate",
-          "Item2": 2
-        },
-        {
-          "Item1": "basic machine casing",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "andesite",
-    "Item2": {
-      "Item1": 1,
-      "Item2": []
-    }
-  },
-  {
-    "Item1": "basic machine casing",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "iron plate",
-          "Item2": 8
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "batbox",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "wood plank",
-          "Item2": 5
-        },
-        {
-          "Item1": "re-battery",
-          "Item2": 3
-        },
-        {
-          "Item1": "insulated tin cable",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "batpack",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "re-battery",
-          "Item2": 6
-        },
-        {
-          "Item1": "wood plank",
-          "Item2": 1
-        },
-        {
-          "Item1": "electronic circuit",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "blast furnace",
-    "Item2": {
-      "Item1": 999,
-      "Item2": [
-        {
-          "Item1": "iron item casing",
-          "Item2": 7
-        },
-        {
-          "Item1": "basic machine casing",
-          "Item2": 1
-        },
-        {
-          "Item1": "heat conductor",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "bronze dust",
-    "Item2": {
-      "Item1": 4,
-      "Item2": [
-        {
-          "Item1": "crushed copper ore",
-          "Item2": 3
-        },
-        {
-          "Item1": "crushed tin ore",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "bronze ingot",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "bronze dust",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "bronze item casing",
-    "Item2": {
-      "Item1": 2,
-      "Item2": [
-        {
-          "Item1": "bronze plate",
-          "Item2": 1
-        },
-        {
-          "Item1": "forge hummer",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "bronze plate",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "bronze ingot",
-          "Item2": 1
-        },
-        {
-          "Item1": "forge hummer",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "bucket",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "iron ingot",
-          "Item2": 3
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "carbon plate",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "compressor",
-          "Item2": 1
-        },
-        {
-          "Item1": "raw carbon mesh",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "chest",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "wood plank",
-          "Item2": 8
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "coal dust",
-    "Item2": {
-      "Item1": 1,
-      "Item2": []
-    }
-  },
-  {
-    "Item1": "coalfuel cell",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "extractor",
-          "Item2": 1
-        },
-        {
-          "Item1": "h. coal cell",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "cobblestone",
-    "Item2": {
-      "Item1": 1,
-      "Item2": []
-    }
-  },
-  {
-    "Item1": "coil",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "copper cable",
-          "Item2": 8
-        },
-        {
-          "Item1": "iron ingot",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "compressor",
-    "Item2": {
-      "Item1": 999,
-      "Item2": [
-        {
-          "Item1": "andesite",
-          "Item2": 6
-        },
-        {
-          "Item1": "basic machine casing",
-          "Item2": 1
-        },
-        {
-          "Item1": "electronic circuit",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "copper cable",
-    "Item2": {
-      "Item1": 2,
-      "Item2": [
-        {
-          "Item1": "copper plate",
-          "Item2": 1
-        },
-        {
-          "Item1": "cutter",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "copper ingot",
-    "Item2": {
-      "Item1": 1,
-      "Item2": []
-    }
-  },
-  {
-    "Item1": "copper ore",
-    "Item2": {
-      "Item1": 1,
-      "Item2": []
-    }
-  },
-  {
-    "Item1": "copper plate",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "copper ingot",
-          "Item2": 1
-        },
-        {
-          "Item1": "forge hummer",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "craft",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "mining drill",
-          "Item2": 1
-        },
-        {
-          "Item1": "batpack",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "craft2",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "pump",
-          "Item2": 1
-        },
-        {
-          "Item1": "fluid ejector upgrade",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "craftReactor",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "compressor",
-          "Item2": 1
-        },
-        {
-          "Item1": "nuclear reactor",
-          "Item2": 1
-        },
-        {
-          "Item1": "fluid/solid canning machine",
-          "Item2": 1
-        },
-        {
-          "Item1": "thermal centrifuge",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "crafting table",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "wood plank",
-          "Item2": 4
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "crushed copper ore",
-    "Item2": {
-      "Item1": 2,
-      "Item2": [
-        {
-          "Item1": "copper ore",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "crushed tin ore",
-    "Item2": {
-      "Item1": 2,
-      "Item2": [
-        {
-          "Item1": "tin ore",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "cutter",
-    "Item2": {
-      "Item1": 60,
-      "Item2": [
-        {
-          "Item1": "iron plate",
-          "Item2": 3
-        },
-        {
-          "Item1": "iron ingot",
-          "Item2": 2
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "dense lead plate",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "compressor",
-          "Item2": 1
-        },
-        {
-          "Item1": "lead plate",
-          "Item2": 9
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "diamond",
-    "Item2": {
-      "Item1": 1,
-      "Item2": []
-    }
-  },
-  {
-    "Item1": "diamond dust",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "macerator",
-          "Item2": 1
-        },
-        {
-          "Item1": "diamond",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "electric furnace",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "redstone",
-          "Item2": 2
-        },
-        {
-          "Item1": "iron furnace",
-          "Item2": 1
-        },
-        {
-          "Item1": "electronic circuit",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "electric motor",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "tin item casing",
-          "Item2": 2
-        },
-        {
-          "Item1": "coil",
-          "Item2": 2
-        },
-        {
-          "Item1": "iron ingot",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "electric wrench",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "wrench",
-          "Item2": 1
-        },
-        {
-          "Item1": "small power unit",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "electronic circuit",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "insulated copper cable",
-          "Item2": 6
-        },
-        {
-          "Item1": "redstone",
-          "Item2": 2
-        },
-        {
-          "Item1": "iron plate",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "energium dust",
-    "Item2": {
-      "Item1": 9,
-      "Item2": [
-        {
-          "Item1": "redstone",
-          "Item2": 5
-        },
-        {
-          "Item1": "diamond dust",
-          "Item2": 4
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "energy crystal",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "compressor",
-          "Item2": 1
-        },
-        {
-          "Item1": "energium dust",
-          "Item2": 9
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "extractor",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "treetap",
-          "Item2": 4
-        },
-        {
-          "Item1": "electronic circuit",
-          "Item2": 1
-        },
-        {
-          "Item1": "basic machine casing",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "fermenter",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "heat conductor",
-          "Item2": 1
-        },
-        {
-          "Item1": "iron item casing",
-          "Item2": 5
-        },
-        {
-          "Item1": "universal fluid cell",
-          "Item2": 3
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "flint",
-    "Item2": {
-      "Item1": 1,
-      "Item2": []
-    }
-  },
-  {
-    "Item1": "fluid ejector upgrade",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "tin plate",
-          "Item2": 4
-        },
-        {
-          "Item1": "electric motor",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "fluid/solid canning machine",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "tin item casing",
-          "Item2": 7
-        },
-        {
-          "Item1": "basic machine casing",
-          "Item2": 1
-        },
-        {
-          "Item1": "electronic circuit",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "forge hummer",
-    "Item2": {
-      "Item1": 80,
-      "Item2": [
-        {
-          "Item1": "stick",
-          "Item2": 2
-        },
-        {
-          "Item1": "iron ingot",
-          "Item2": 5
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "fuel can",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "tin plate",
-          "Item2": 7
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "furnace",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "cobblestone",
-          "Item2": 8
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "generator",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "re-battery",
-          "Item2": 1
-        },
-        {
-          "Item1": "basic machine casing",
-          "Item2": 1
-        },
-        {
-          "Item1": "furnace",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "geothermal generator",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "glass",
-          "Item2": 4
-        },
-        {
-          "Item1": "universal fluid cell",
-          "Item2": 2
-        },
-        {
-          "Item1": "iron item casing",
-          "Item2": 2
-        },
-        {
-          "Item1": "generator",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "glass",
-    "Item2": {
-      "Item1": 1,
-      "Item2": []
-    }
-  },
-  {
-    "Item1": "glass pane",
-    "Item2": {
-      "Item1": 16,
-      "Item2": [
-        {
-          "Item1": "glass",
-          "Item2": 6
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "glowstone",
-    "Item2": {
-      "Item1": 1,
-      "Item2": []
-    }
-  },
-  {
-    "Item1": "h. coal cell",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "empty cell",
-          "Item2": 1
-        },
-        {
-          "Item1": "compressed hyd. coalclump",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "heat conductor",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "rubber",
-          "Item2": 6
-        },
-        {
-          "Item1": "copper plate",
-          "Item2": 3
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "industrial workbench",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "crafting table",
-          "Item2": 1
-        },
-        {
-          "Item1": "forge hummer",
-          "Item2": 1
-        },
-        {
-          "Item1": "basic machine casing",
-          "Item2": 1
-        },
-        {
-          "Item1": "cutter",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "insulated copper cable",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "rubber",
-          "Item2": 1
-        },
-        {
-          "Item1": "copper cable",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "insulated tin cable",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "rubber",
-          "Item2": 1
-        },
-        {
-          "Item1": "tin cable",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "iron furnace",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "iron plate",
-          "Item2": 5
-        },
-        {
-          "Item1": "furnace",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "iron ingot",
-    "Item2": {
-      "Item1": 1,
-      "Item2": []
-    }
-  },
-  {
-    "Item1": "iron item casing",
-    "Item2": {
-      "Item1": 2,
-      "Item2": [
-        {
-          "Item1": "iron plate",
-          "Item2": 1
-        },
-        {
-          "Item1": "forge hummer",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "iron plate",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "iron ingot",
-          "Item2": 1
-        },
-        {
-          "Item1": "forge hummer",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "lapis lazuli",
-    "Item2": {
-      "Item1": 1,
-      "Item2": []
-    }
-  },
-  {
-    "Item1": "lead ingot",
-    "Item2": {
-      "Item1": 1,
-      "Item2": []
-    }
-  },
-  {
-    "Item1": "lead plate",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "lead ingot",
-          "Item2": 1
-        },
-        {
-          "Item1": "forge hummer",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "liquid fuel firebox",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "universal fluid cell",
-          "Item2": 4
-        },
-        {
-          "Item1": "iron item casing",
-          "Item2": 4
-        },
-        {
-          "Item1": "heat conductor",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "liquid heat exchanger",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "glass",
-          "Item2": 4
-        },
-        {
-          "Item1": "universal fluid cell",
-          "Item2": 2
-        },
-        {
-          "Item1": "iron item casing",
-          "Item2": 2
-        },
-        {
-          "Item1": "heat conductor",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "macerator",
-    "Item2": {
-      "Item1": 999,
-      "Item2": [
-        {
-          "Item1": "flint",
-          "Item2": 3
-        },
-        {
-          "Item1": "cobblestone",
-          "Item2": 2
-        },
-        {
-          "Item1": "basic machine casing",
-          "Item2": 1
-        },
-        {
-          "Item1": "electronic circuit",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "metal former",
-    "Item2": {
-      "Item1": 999,
-      "Item2": [
-        {
-          "Item1": "toolbox",
-          "Item2": 2
-        },
-        {
-          "Item1": "coil",
-          "Item2": 3
-        },
-        {
-          "Item1": "basic machine casing",
-          "Item2": 1
-        },
-        {
-          "Item1": "electronic circuit",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "mining drill",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "iron plate",
-          "Item2": 6
-        },
-        {
-          "Item1": "power unit",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "mining laser",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "energy crystal",
-          "Item2": 1
-        },
-        {
-          "Item1": "redstone",
-          "Item2": 2
-        },
-        {
-          "Item1": "advanced circuit",
-          "Item2": 1
-        },
-        {
-          "Item1": "advanced alloy",
-          "Item2": 4
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "mining pipe",
-    "Item2": {
-      "Item1": 16,
-      "Item2": [
-        {
-          "Item1": "treetap",
-          "Item2": 1
-        },
-        {
-          "Item1": "iron plate",
-          "Item2": 6
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "mixed metal ingot",
-    "Item2": {
-      "Item1": 2,
-      "Item2": [
-        {
-          "Item1": "iron plate",
-          "Item2": 3
-        },
-        {
-          "Item1": "bronze plate",
-          "Item2": 3
-        },
-        {
-          "Item1": "tin plate",
-          "Item2": 3
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "nuclear reactor",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "dense lead plate",
-          "Item2": 4
-        },
-        {
-          "Item1": "generator",
-          "Item2": 1
-        },
-        {
-          "Item1": "reactor chamber",
-          "Item2": 3
-        },
-        {
-          "Item1": "advanced circuit",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "ore washing plant",
-    "Item2": {
-      "Item1": 999,
-      "Item2": [
-        {
-          "Item1": "iron plate",
-          "Item2": 3
-        },
-        {
-          "Item1": "bucket",
-          "Item2": 2
-        },
-        {
-          "Item1": "basic machine casing",
-          "Item2": 1
-        },
-        {
-          "Item1": "electric motor",
-          "Item2": 2
-        },
-        {
-          "Item1": "electronic circuit",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "power unit",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "re-battery",
-          "Item2": 3
-        },
-        {
-          "Item1": "electronic circuit",
-          "Item2": 1
-        },
-        {
-          "Item1": "copper cable",
-          "Item2": 2
-        },
-        {
-          "Item1": "electric motor",
-          "Item2": 1
-        },
-        {
-          "Item1": "iron item casing",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "pump",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "universal fluid cell",
-          "Item2": 4
-        },
-        {
-          "Item1": "basic machine casing",
-          "Item2": 1
-        },
-        {
-          "Item1": "electronic circuit",
-          "Item2": 1
-        },
-        {
-          "Item1": "mining pipe",
-          "Item2": 2
-        },
-        {
-          "Item1": "treetap",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "purified crushed iron ore",
-    "Item2": {
-      "Item1": 1,
-      "Item2": []
-    }
-  },
-  {
-    "Item1": "raw carbon fibre",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "coal dust",
-          "Item2": 4
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "raw carbon mesh",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "raw carbon fibre",
-          "Item2": 2
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "re-battery",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "insulated tin cable",
-          "Item2": 1
-        },
-        {
-          "Item1": "redstone",
-          "Item2": 2
-        },
-        {
-          "Item1": "tin item casing",
-          "Item2": 4
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "reactor chamber",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "lead plate",
-          "Item2": 4
-        },
-        {
-          "Item1": "basic machine casing",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "redstone",
-    "Item2": {
-      "Item1": 1,
-      "Item2": []
-    }
-  },
-  {
-    "Item1": "rubber",
-    "Item2": {
-      "Item1": 1,
-      "Item2": []
-    }
-  },
-  {
-    "Item1": "semifluid generator",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "geothermal generator",
-          "Item2": 1
-        },
-        {
-          "Item1": "universal fluid cell",
-          "Item2": 4
-        },
-        {
-          "Item1": "iron item casing",
-          "Item2": 4
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "small power unit",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "re-battery",
-          "Item2": 1
-        },
-        {
-          "Item1": "copper cable",
-          "Item2": 2
-        },
-        {
-          "Item1": "electronic circuit",
-          "Item2": 1
-        },
-        {
-          "Item1": "iron item casing",
-          "Item2": 2
-        },
-        {
-          "Item1": "electric motor",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "solid canning machine",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "tin can",
-          "Item2": 2
-        },
-        {
-          "Item1": "basic machine casing",
-          "Item2": 1
-        },
-        {
-          "Item1": "electronic circuit",
-          "Item2": 2
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "steel ingot",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "purified crushed iron ore",
-          "Item2": 1
-        },
-        {
-          "Item1": "blast furnace",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "steel plate",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "steel ingot",
-          "Item2": 1
-        },
-        {
-          "Item1": "forge hummer",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "stick",
-    "Item2": {
-      "Item1": 4,
-      "Item2": [
-        {
-          "Item1": "wood plank",
-          "Item2": 2
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "thermal centrifuge",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "coil",
-          "Item2": 2
-        },
-        {
-          "Item1": "iron ingot",
-          "Item2": 4
-        },
-        {
-          "Item1": "advanced machine casing",
-          "Item2": 1
-        },
-        {
-          "Item1": "electric motor",
-          "Item2": 1
-        },
-        {
-          "Item1": "mining laser",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "tin cable",
-    "Item2": {
-      "Item1": 3,
-      "Item2": [
-        {
-          "Item1": "tin plate",
-          "Item2": 1
-        },
-        {
-          "Item1": "cutter",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "tin can",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "tin item casing",
-          "Item2": 1
-        },
-        {
-          "Item1": "metal former",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "tin ingot",
-    "Item2": {
-      "Item1": 1,
-      "Item2": []
-    }
-  },
-  {
-    "Item1": "tin item casing",
-    "Item2": {
-      "Item1": 2,
-      "Item2": [
-        {
-          "Item1": "tin plate",
-          "Item2": 1
-        },
-        {
-          "Item1": "forge hummer",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "tin ore",
-    "Item2": {
-      "Item1": 1,
-      "Item2": []
-    }
-  },
-  {
-    "Item1": "tin plate",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "tin ingot",
-          "Item2": 1
-        },
-        {
-          "Item1": "forge hummer",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "toolbox",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "bronze item casing",
-          "Item2": 5
-        },
-        {
-          "Item1": "chest",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "treetap",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "wood plank",
-          "Item2": 5
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "universal fluid cell",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "tin item casing",
-          "Item2": 4
-        },
-        {
-          "Item1": "glass pane",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "wood",
-    "Item2": {
-      "Item1": 1,
-      "Item2": []
-    }
-  },
-  {
-    "Item1": "wood plank",
-    "Item2": {
-      "Item1": 4,
-      "Item2": [
-        {
-          "Item1": "wood",
-          "Item2": 1
-        }
-      ]
-    }
-  },
-  {
-    "Item1": "wrench",
-    "Item2": {
-      "Item1": 1,
-      "Item2": [
-        {
-          "Item1": "bronze ingot",
-          "Item2": 6
-        }
-      ]
-    }
-  }
-]
+{
+  "Case": "Reciples",
+  "Fields": [
+    {
+      "EUFromFuelCanWithCoal": {
+        "Item1": 76440,
+        "Item2": [
+          {
+            "Item1": "fuel can",
+            "Item2": 1
+          },
+          {
+            "Item1": "coalfuel cell",
+            "Item2": 6
+          }
+        ]
+      },
+      "advanced alloy": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "compressor",
+            "Item2": 1
+          },
+          {
+            "Item1": "mixed metal ingot",
+            "Item2": 1
+          }
+        ]
+      },
+      "advanced circuit": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "redstone",
+            "Item2": 4
+          },
+          {
+            "Item1": "lapis lazuli",
+            "Item2": 2
+          },
+          {
+            "Item1": "glowstone",
+            "Item2": 2
+          },
+          {
+            "Item1": "electronic circuit",
+            "Item2": 1
+          }
+        ]
+      },
+      "advanced machine casing": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "steel plate",
+            "Item2": 4
+          },
+          {
+            "Item1": "advanced alloy",
+            "Item2": 2
+          },
+          {
+            "Item1": "carbon plate",
+            "Item2": 2
+          },
+          {
+            "Item1": "basic machine casing",
+            "Item2": 1
+          }
+        ]
+      },
+      "andesite": {
+        "Item1": 1,
+        "Item2": []
+      },
+      "basic machine casing": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "iron plate",
+            "Item2": 8
+          }
+        ]
+      },
+      "batbox": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "wood plank",
+            "Item2": 5
+          },
+          {
+            "Item1": "re-battery",
+            "Item2": 3
+          },
+          {
+            "Item1": "insulated tin cable",
+            "Item2": 1
+          }
+        ]
+      },
+      "batpack": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "re-battery",
+            "Item2": 6
+          },
+          {
+            "Item1": "wood plank",
+            "Item2": 1
+          },
+          {
+            "Item1": "electronic circuit",
+            "Item2": 1
+          }
+        ]
+      },
+      "blast furnace": {
+        "Item1": 999,
+        "Item2": [
+          {
+            "Item1": "iron item casing",
+            "Item2": 7
+          },
+          {
+            "Item1": "basic machine casing",
+            "Item2": 1
+          },
+          {
+            "Item1": "heat conductor",
+            "Item2": 1
+          }
+        ]
+      },
+      "bronze dust": {
+        "Item1": 4,
+        "Item2": [
+          {
+            "Item1": "crushed copper ore",
+            "Item2": 3
+          },
+          {
+            "Item1": "crushed tin ore",
+            "Item2": 1
+          }
+        ]
+      },
+      "bronze ingot": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "bronze dust",
+            "Item2": 1
+          }
+        ]
+      },
+      "bronze item casing": {
+        "Item1": 2,
+        "Item2": [
+          {
+            "Item1": "bronze plate",
+            "Item2": 1
+          },
+          {
+            "Item1": "forge hummer",
+            "Item2": 1
+          }
+        ]
+      },
+      "bronze plate": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "bronze ingot",
+            "Item2": 1
+          },
+          {
+            "Item1": "forge hummer",
+            "Item2": 1
+          }
+        ]
+      },
+      "bucket": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "iron ingot",
+            "Item2": 3
+          }
+        ]
+      },
+      "carbon plate": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "compressor",
+            "Item2": 1
+          },
+          {
+            "Item1": "raw carbon mesh",
+            "Item2": 1
+          }
+        ]
+      },
+      "chest": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "wood plank",
+            "Item2": 8
+          }
+        ]
+      },
+      "coal dust": {
+        "Item1": 1,
+        "Item2": []
+      },
+      "coalfuel cell": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "extractor",
+            "Item2": 1
+          },
+          {
+            "Item1": "h. coal cell",
+            "Item2": 1
+          }
+        ]
+      },
+      "cobblestone": {
+        "Item1": 1,
+        "Item2": []
+      },
+      "coil": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "copper cable",
+            "Item2": 8
+          },
+          {
+            "Item1": "iron ingot",
+            "Item2": 1
+          }
+        ]
+      },
+      "compressor": {
+        "Item1": 999,
+        "Item2": [
+          {
+            "Item1": "andesite",
+            "Item2": 6
+          },
+          {
+            "Item1": "basic machine casing",
+            "Item2": 1
+          },
+          {
+            "Item1": "electronic circuit",
+            "Item2": 1
+          }
+        ]
+      },
+      "copper cable": {
+        "Item1": 2,
+        "Item2": [
+          {
+            "Item1": "copper plate",
+            "Item2": 1
+          },
+          {
+            "Item1": "cutter",
+            "Item2": 1
+          }
+        ]
+      },
+      "copper ingot": {
+        "Item1": 1,
+        "Item2": []
+      },
+      "copper ore": {
+        "Item1": 1,
+        "Item2": []
+      },
+      "copper plate": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "copper ingot",
+            "Item2": 1
+          },
+          {
+            "Item1": "forge hummer",
+            "Item2": 1
+          }
+        ]
+      },
+      "craft": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "mining drill",
+            "Item2": 1
+          },
+          {
+            "Item1": "batpack",
+            "Item2": 1
+          }
+        ]
+      },
+      "craft2": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "pump",
+            "Item2": 1
+          },
+          {
+            "Item1": "fluid ejector upgrade",
+            "Item2": 1
+          }
+        ]
+      },
+      "craftReactor": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "compressor",
+            "Item2": 1
+          },
+          {
+            "Item1": "nuclear reactor",
+            "Item2": 1
+          },
+          {
+            "Item1": "fluid/solid canning machine",
+            "Item2": 1
+          },
+          {
+            "Item1": "thermal centrifuge",
+            "Item2": 1
+          }
+        ]
+      },
+      "crafting table": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "wood plank",
+            "Item2": 4
+          }
+        ]
+      },
+      "crushed copper ore": {
+        "Item1": 2,
+        "Item2": [
+          {
+            "Item1": "copper ore",
+            "Item2": 1
+          }
+        ]
+      },
+      "crushed tin ore": {
+        "Item1": 2,
+        "Item2": [
+          {
+            "Item1": "tin ore",
+            "Item2": 1
+          }
+        ]
+      },
+      "cutter": {
+        "Item1": 60,
+        "Item2": [
+          {
+            "Item1": "iron plate",
+            "Item2": 3
+          },
+          {
+            "Item1": "iron ingot",
+            "Item2": 2
+          }
+        ]
+      },
+      "dense lead plate": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "compressor",
+            "Item2": 1
+          },
+          {
+            "Item1": "lead plate",
+            "Item2": 9
+          }
+        ]
+      },
+      "diamond": {
+        "Item1": 1,
+        "Item2": []
+      },
+      "diamond dust": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "macerator",
+            "Item2": 1
+          },
+          {
+            "Item1": "diamond",
+            "Item2": 1
+          }
+        ]
+      },
+      "electric furnace": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "redstone",
+            "Item2": 2
+          },
+          {
+            "Item1": "iron furnace",
+            "Item2": 1
+          },
+          {
+            "Item1": "electronic circuit",
+            "Item2": 1
+          }
+        ]
+      },
+      "electric motor": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "tin item casing",
+            "Item2": 2
+          },
+          {
+            "Item1": "coil",
+            "Item2": 2
+          },
+          {
+            "Item1": "iron ingot",
+            "Item2": 1
+          }
+        ]
+      },
+      "electric wrench": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "wrench",
+            "Item2": 1
+          },
+          {
+            "Item1": "small power unit",
+            "Item2": 1
+          }
+        ]
+      },
+      "electronic circuit": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "insulated copper cable",
+            "Item2": 6
+          },
+          {
+            "Item1": "redstone",
+            "Item2": 2
+          },
+          {
+            "Item1": "iron plate",
+            "Item2": 1
+          }
+        ]
+      },
+      "energium dust": {
+        "Item1": 9,
+        "Item2": [
+          {
+            "Item1": "redstone",
+            "Item2": 5
+          },
+          {
+            "Item1": "diamond dust",
+            "Item2": 4
+          }
+        ]
+      },
+      "energy crystal": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "compressor",
+            "Item2": 1
+          },
+          {
+            "Item1": "energium dust",
+            "Item2": 9
+          }
+        ]
+      },
+      "extractor": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "treetap",
+            "Item2": 4
+          },
+          {
+            "Item1": "electronic circuit",
+            "Item2": 1
+          },
+          {
+            "Item1": "basic machine casing",
+            "Item2": 1
+          }
+        ]
+      },
+      "fermenter": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "heat conductor",
+            "Item2": 1
+          },
+          {
+            "Item1": "iron item casing",
+            "Item2": 5
+          },
+          {
+            "Item1": "universal fluid cell",
+            "Item2": 3
+          }
+        ]
+      },
+      "flint": {
+        "Item1": 1,
+        "Item2": []
+      },
+      "fluid ejector upgrade": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "tin plate",
+            "Item2": 4
+          },
+          {
+            "Item1": "electric motor",
+            "Item2": 1
+          }
+        ]
+      },
+      "fluid/solid canning machine": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "tin item casing",
+            "Item2": 7
+          },
+          {
+            "Item1": "basic machine casing",
+            "Item2": 1
+          },
+          {
+            "Item1": "electronic circuit",
+            "Item2": 1
+          }
+        ]
+      },
+      "forge hummer": {
+        "Item1": 80,
+        "Item2": [
+          {
+            "Item1": "stick",
+            "Item2": 2
+          },
+          {
+            "Item1": "iron ingot",
+            "Item2": 5
+          }
+        ]
+      },
+      "fuel can": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "tin plate",
+            "Item2": 7
+          }
+        ]
+      },
+      "furnace": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "cobblestone",
+            "Item2": 8
+          }
+        ]
+      },
+      "generator": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "re-battery",
+            "Item2": 1
+          },
+          {
+            "Item1": "basic machine casing",
+            "Item2": 1
+          },
+          {
+            "Item1": "furnace",
+            "Item2": 1
+          }
+        ]
+      },
+      "geothermal generator": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "glass",
+            "Item2": 4
+          },
+          {
+            "Item1": "universal fluid cell",
+            "Item2": 2
+          },
+          {
+            "Item1": "iron item casing",
+            "Item2": 2
+          },
+          {
+            "Item1": "generator",
+            "Item2": 1
+          }
+        ]
+      },
+      "glass": {
+        "Item1": 1,
+        "Item2": []
+      },
+      "glass pane": {
+        "Item1": 16,
+        "Item2": [
+          {
+            "Item1": "glass",
+            "Item2": 6
+          }
+        ]
+      },
+      "glowstone": {
+        "Item1": 1,
+        "Item2": []
+      },
+      "h. coal cell": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "empty cell",
+            "Item2": 1
+          },
+          {
+            "Item1": "compressed hyd. coalclump",
+            "Item2": 1
+          }
+        ]
+      },
+      "heat conductor": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "rubber",
+            "Item2": 6
+          },
+          {
+            "Item1": "copper plate",
+            "Item2": 3
+          }
+        ]
+      },
+      "industrial workbench": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "crafting table",
+            "Item2": 1
+          },
+          {
+            "Item1": "forge hummer",
+            "Item2": 1
+          },
+          {
+            "Item1": "basic machine casing",
+            "Item2": 1
+          },
+          {
+            "Item1": "cutter",
+            "Item2": 1
+          }
+        ]
+      },
+      "insulated copper cable": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "rubber",
+            "Item2": 1
+          },
+          {
+            "Item1": "copper cable",
+            "Item2": 1
+          }
+        ]
+      },
+      "insulated tin cable": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "rubber",
+            "Item2": 1
+          },
+          {
+            "Item1": "tin cable",
+            "Item2": 1
+          }
+        ]
+      },
+      "iron furnace": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "iron plate",
+            "Item2": 5
+          },
+          {
+            "Item1": "furnace",
+            "Item2": 1
+          }
+        ]
+      },
+      "iron ingot": {
+        "Item1": 1,
+        "Item2": []
+      },
+      "iron item casing": {
+        "Item1": 2,
+        "Item2": [
+          {
+            "Item1": "iron plate",
+            "Item2": 1
+          },
+          {
+            "Item1": "forge hummer",
+            "Item2": 1
+          }
+        ]
+      },
+      "iron plate": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "iron ingot",
+            "Item2": 1
+          },
+          {
+            "Item1": "forge hummer",
+            "Item2": 1
+          }
+        ]
+      },
+      "lapis lazuli": {
+        "Item1": 1,
+        "Item2": []
+      },
+      "lead ingot": {
+        "Item1": 1,
+        "Item2": []
+      },
+      "lead plate": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "lead ingot",
+            "Item2": 1
+          },
+          {
+            "Item1": "forge hummer",
+            "Item2": 1
+          }
+        ]
+      },
+      "liquid fuel firebox": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "universal fluid cell",
+            "Item2": 4
+          },
+          {
+            "Item1": "iron item casing",
+            "Item2": 4
+          },
+          {
+            "Item1": "heat conductor",
+            "Item2": 1
+          }
+        ]
+      },
+      "liquid heat exchanger": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "glass",
+            "Item2": 4
+          },
+          {
+            "Item1": "universal fluid cell",
+            "Item2": 2
+          },
+          {
+            "Item1": "iron item casing",
+            "Item2": 2
+          },
+          {
+            "Item1": "heat conductor",
+            "Item2": 1
+          }
+        ]
+      },
+      "macerator": {
+        "Item1": 999,
+        "Item2": [
+          {
+            "Item1": "flint",
+            "Item2": 3
+          },
+          {
+            "Item1": "cobblestone",
+            "Item2": 2
+          },
+          {
+            "Item1": "basic machine casing",
+            "Item2": 1
+          },
+          {
+            "Item1": "electronic circuit",
+            "Item2": 1
+          }
+        ]
+      },
+      "metal former": {
+        "Item1": 999,
+        "Item2": [
+          {
+            "Item1": "toolbox",
+            "Item2": 2
+          },
+          {
+            "Item1": "coil",
+            "Item2": 3
+          },
+          {
+            "Item1": "basic machine casing",
+            "Item2": 1
+          },
+          {
+            "Item1": "electronic circuit",
+            "Item2": 1
+          }
+        ]
+      },
+      "mining drill": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "iron plate",
+            "Item2": 6
+          },
+          {
+            "Item1": "power unit",
+            "Item2": 1
+          }
+        ]
+      },
+      "mining laser": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "energy crystal",
+            "Item2": 1
+          },
+          {
+            "Item1": "redstone",
+            "Item2": 2
+          },
+          {
+            "Item1": "advanced circuit",
+            "Item2": 1
+          },
+          {
+            "Item1": "advanced alloy",
+            "Item2": 4
+          }
+        ]
+      },
+      "mining pipe": {
+        "Item1": 16,
+        "Item2": [
+          {
+            "Item1": "treetap",
+            "Item2": 1
+          },
+          {
+            "Item1": "iron plate",
+            "Item2": 6
+          }
+        ]
+      },
+      "mixed metal ingot": {
+        "Item1": 2,
+        "Item2": [
+          {
+            "Item1": "iron plate",
+            "Item2": 3
+          },
+          {
+            "Item1": "bronze plate",
+            "Item2": 3
+          },
+          {
+            "Item1": "tin plate",
+            "Item2": 3
+          }
+        ]
+      },
+      "nuclear reactor": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "dense lead plate",
+            "Item2": 4
+          },
+          {
+            "Item1": "generator",
+            "Item2": 1
+          },
+          {
+            "Item1": "reactor chamber",
+            "Item2": 3
+          },
+          {
+            "Item1": "advanced circuit",
+            "Item2": 1
+          }
+        ]
+      },
+      "ore washing plant": {
+        "Item1": 999,
+        "Item2": [
+          {
+            "Item1": "iron plate",
+            "Item2": 3
+          },
+          {
+            "Item1": "bucket",
+            "Item2": 2
+          },
+          {
+            "Item1": "basic machine casing",
+            "Item2": 1
+          },
+          {
+            "Item1": "electric motor",
+            "Item2": 2
+          },
+          {
+            "Item1": "electronic circuit",
+            "Item2": 1
+          }
+        ]
+      },
+      "power unit": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "re-battery",
+            "Item2": 3
+          },
+          {
+            "Item1": "electronic circuit",
+            "Item2": 1
+          },
+          {
+            "Item1": "copper cable",
+            "Item2": 2
+          },
+          {
+            "Item1": "electric motor",
+            "Item2": 1
+          },
+          {
+            "Item1": "iron item casing",
+            "Item2": 1
+          }
+        ]
+      },
+      "pump": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "universal fluid cell",
+            "Item2": 4
+          },
+          {
+            "Item1": "basic machine casing",
+            "Item2": 1
+          },
+          {
+            "Item1": "electronic circuit",
+            "Item2": 1
+          },
+          {
+            "Item1": "mining pipe",
+            "Item2": 2
+          },
+          {
+            "Item1": "treetap",
+            "Item2": 1
+          }
+        ]
+      },
+      "purified crushed iron ore": {
+        "Item1": 1,
+        "Item2": []
+      },
+      "raw carbon fibre": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "coal dust",
+            "Item2": 4
+          }
+        ]
+      },
+      "raw carbon mesh": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "raw carbon fibre",
+            "Item2": 2
+          }
+        ]
+      },
+      "re-battery": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "insulated tin cable",
+            "Item2": 1
+          },
+          {
+            "Item1": "redstone",
+            "Item2": 2
+          },
+          {
+            "Item1": "tin item casing",
+            "Item2": 4
+          }
+        ]
+      },
+      "reactor chamber": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "lead plate",
+            "Item2": 4
+          },
+          {
+            "Item1": "basic machine casing",
+            "Item2": 1
+          }
+        ]
+      },
+      "redstone": {
+        "Item1": 1,
+        "Item2": []
+      },
+      "rubber": {
+        "Item1": 1,
+        "Item2": []
+      },
+      "semifluid generator": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "geothermal generator",
+            "Item2": 1
+          },
+          {
+            "Item1": "universal fluid cell",
+            "Item2": 4
+          },
+          {
+            "Item1": "iron item casing",
+            "Item2": 4
+          }
+        ]
+      },
+      "small power unit": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "re-battery",
+            "Item2": 1
+          },
+          {
+            "Item1": "copper cable",
+            "Item2": 2
+          },
+          {
+            "Item1": "electronic circuit",
+            "Item2": 1
+          },
+          {
+            "Item1": "iron item casing",
+            "Item2": 2
+          },
+          {
+            "Item1": "electric motor",
+            "Item2": 1
+          }
+        ]
+      },
+      "solid canning machine": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "tin can",
+            "Item2": 2
+          },
+          {
+            "Item1": "basic machine casing",
+            "Item2": 1
+          },
+          {
+            "Item1": "electronic circuit",
+            "Item2": 2
+          }
+        ]
+      },
+      "steel ingot": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "purified crushed iron ore",
+            "Item2": 1
+          },
+          {
+            "Item1": "blast furnace",
+            "Item2": 1
+          }
+        ]
+      },
+      "steel plate": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "steel ingot",
+            "Item2": 1
+          },
+          {
+            "Item1": "forge hummer",
+            "Item2": 1
+          }
+        ]
+      },
+      "stick": {
+        "Item1": 4,
+        "Item2": [
+          {
+            "Item1": "wood plank",
+            "Item2": 2
+          }
+        ]
+      },
+      "thermal centrifuge": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "coil",
+            "Item2": 2
+          },
+          {
+            "Item1": "iron ingot",
+            "Item2": 4
+          },
+          {
+            "Item1": "advanced machine casing",
+            "Item2": 1
+          },
+          {
+            "Item1": "electric motor",
+            "Item2": 1
+          },
+          {
+            "Item1": "mining laser",
+            "Item2": 1
+          }
+        ]
+      },
+      "tin cable": {
+        "Item1": 3,
+        "Item2": [
+          {
+            "Item1": "tin plate",
+            "Item2": 1
+          },
+          {
+            "Item1": "cutter",
+            "Item2": 1
+          }
+        ]
+      },
+      "tin can": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "tin item casing",
+            "Item2": 1
+          },
+          {
+            "Item1": "metal former",
+            "Item2": 1
+          }
+        ]
+      },
+      "tin ingot": {
+        "Item1": 1,
+        "Item2": []
+      },
+      "tin item casing": {
+        "Item1": 2,
+        "Item2": [
+          {
+            "Item1": "tin plate",
+            "Item2": 1
+          },
+          {
+            "Item1": "forge hummer",
+            "Item2": 1
+          }
+        ]
+      },
+      "tin ore": {
+        "Item1": 1,
+        "Item2": []
+      },
+      "tin plate": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "tin ingot",
+            "Item2": 1
+          },
+          {
+            "Item1": "forge hummer",
+            "Item2": 1
+          }
+        ]
+      },
+      "toolbox": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "bronze item casing",
+            "Item2": 5
+          },
+          {
+            "Item1": "chest",
+            "Item2": 1
+          }
+        ]
+      },
+      "treetap": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "wood plank",
+            "Item2": 5
+          }
+        ]
+      },
+      "universal fluid cell": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "tin item casing",
+            "Item2": 4
+          },
+          {
+            "Item1": "glass pane",
+            "Item2": 1
+          }
+        ]
+      },
+      "wood": {
+        "Item1": 1,
+        "Item2": []
+      },
+      "wood plank": {
+        "Item1": 4,
+        "Item2": [
+          {
+            "Item1": "wood",
+            "Item2": 1
+          }
+        ]
+      },
+      "wrench": {
+        "Item1": 1,
+        "Item2": [
+          {
+            "Item1": "bronze ingot",
+            "Item2": 6
+          }
+        ]
+      }
+    }
+  ]
+}

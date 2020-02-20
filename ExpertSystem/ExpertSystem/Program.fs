@@ -3,12 +3,6 @@
 open System.Windows.Forms
 open System
 
-#if INTERACTIVE
-#load "tree.fs"
-#load "Expander.fs"
-#endif
-
-type ReciplesType = (string * (int * (string * int) list)) list
 (*
 module realSample =
     /// <summary>
@@ -59,19 +53,15 @@ module serial =
         let byteArr = serializeThing thing
         use fileStream = new FileStream(path, FileMode.Create)
         fileStream.Write(byteArr, 0, byteArr.Length)
-
+type Reciples = string Expander.Reciples
+open FsharpMyExtension
 module form = 
     let form = new RecipleInputForm.Form1()
-    // <reciple name = "rec1" make = 1><ingr name = "1" need = 1 />...<name>
-    let bdpath = "bd.dat"
-    //form.txbName.AutoCompleteCustomSource.Add("aaaa".ToString()) |> printfn "%d"
-    
-    let mutable reciples = 
+    let bdpath = "bd.json"
+    let mutable reciples : Reciples =
         if System.IO.File.Exists bdpath then
-            IO.File.ReadAllText bdpath |> fun x -> Newtonsoft.Json.JsonConvert.DeserializeObject<ReciplesType> x
-             // serial.load bdpath :?> ReciplesType
-        else []
-        |> Map.ofList
+            Json.desf bdpath
+        else Expander.Reciples Map.empty
     let txbIngrs = 
         let indent = 40
         let loc x y (c:Control) = c.Location <- Drawing.Point(x, y)
@@ -91,7 +81,9 @@ module form =
         |> form.panel1.Controls.AddRange
         txbIngrs
     do
-        let names = reciples |> Map.toArray |> Array.map fst
+        let names =
+            let (Expander.Reciples reciples) = reciples
+            reciples |> Map.toArray |> Array.map fst
         form.txbName.AutoCompleteCustomSource.AddRange names
         txbIngrs |> List.iter (fun (txb, _) -> txb.AutoCompleteCustomSource.AddRange names)
 
@@ -126,11 +118,16 @@ module form =
                 |> List.map(fun (txb, num) -> txb.Text, int num.Text)
             //let res = form.txbName.Text, (int form.numMake.Text, ingrs)
             form.lstUnknown.Items.Remove form.txbName.Text
+            let (Expander.Reciples reciples') = reciples
             ingrs
-            |> List.iter (fun (x, _) -> 
-                if not <| Map.containsKey x reciples then
+            |> List.iter (fun (x, _) ->
+                if not <| Map.containsKey x reciples' then
                     form.lstUnknown.Items.Add x |> ignore)
-            reciples <- Map.add form.txbName.Text (int form.numMake.Text, ingrs) reciples
+            
+            reciples <-
+                Map.add form.txbName.Text (int form.numMake.Text, ingrs) reciples'
+                |> Expander.Reciples
+
             autoComleteAdd form.txbName.Text
             clear ())
     form.lstUnknown.SelectedIndexChanged.Add(fun _ ->
@@ -145,13 +142,14 @@ module form =
             |> Map.ofList
         let req = form.txbName.Text, int form.numMake.Text
         Expander.expand2Start reciples startRes req |> printfn "%A"
-        )
+    )
     form.FormClosing.Add(fun _ ->
-        let reciples = Map.toList reciples
-        //serial.save bdpath reciples
-        Newtonsoft.Json.JsonConvert.SerializeObject(reciples, Newtonsoft.Json.Formatting.Indented) |> fun s -> IO.File.WriteAllText(bdpath, s)
-        
-        System.IO.File.WriteAllLines("reciplesRaw.txt", List.map (sprintf "%A") reciples))
+        Json.serf bdpath reciples
+
+        let (Expander.Reciples reciples) = reciples
+        Seq.map (fun (KeyValue(k, v)) -> sprintf "%A" (k, v)) reciples
+        |> uncurry System.IO.File.WriteAllLines "reciplesRaw.txt"
+    )
 
 [<STAThread; EntryPoint>]
 let main _ =
