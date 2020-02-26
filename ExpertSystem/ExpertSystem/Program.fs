@@ -1,4 +1,4 @@
-﻿module Program
+module Program
 
 open System.Windows.Forms
 open System
@@ -21,12 +21,12 @@ module serial =
         let byteArr = serializeThing thing
         use fileStream = new FileStream(path, FileMode.Create)
         fileStream.Write(byteArr, 0, byteArr.Length)
-type Reciples = Expander.Reciples
+type Recipes = Expander.Recipes
 open FsharpMyExtension
 module form = 
-    let form = new RecipleInputForm.Form1()
+    let form = new RecipeInputForm.Form1()
     let bdpath = "bd.json"
-    let mutable reciples : Reciples =
+    let mutable recipes : Recipes =
         if System.IO.File.Exists bdpath then
             Json.desf bdpath
         else Map.empty
@@ -50,7 +50,7 @@ module form =
         txbIngrs
     do
         let names =
-            reciples |> Map.toArray |> Array.map fst
+            recipes |> Map.toArray |> Array.map fst
         form.txbName.AutoCompleteCustomSource.AddRange names
         txbIngrs |> List.iter (fun (txb, _) -> txb.AutoCompleteCustomSource.AddRange names)
 
@@ -85,21 +85,21 @@ module form =
                 |> List.map(fun (txb, num) -> txb.Text, int num.Text)
             //let res = form.txbName.Text, (int form.numMake.Text, ingrs)
             form.lstUnknown.Items.Remove form.txbName.Text
-            let reciples' = reciples
+            let recipes' = recipes
             ingrs
             |> List.iter (fun (x, _) ->
-                if not <| Map.containsKey x reciples' then
+                if not <| Map.containsKey x recipes' then
                     form.lstUnknown.Items.Add x |> ignore)
             
-            let reciple =
+            let recipe =
                 {
                     Expander.Ingredients = ingrs
                     Expander.ItemName = form.txbName.Text
                     Expander.OutputCount = int form.numMake.Text
                 }
-            reciples <-
-                Map.add form.txbName.Text reciple reciples'
-                // |> Expander.Reciples
+            recipes <-
+                Map.add form.txbName.Text recipe recipes'
+                // |> Expander.Recipes
 
             autoComleteAdd form.txbName.Text
             clear ())
@@ -114,13 +114,13 @@ module form =
             |> List.map(fun (txb, num) -> txb.Text, int num.Text)
             |> Map.ofList
         let req = form.txbName.Text, int form.numMake.Text
-        Expander.expand2Start reciples startRes req |> printfn "%A"
+        Expander.expand2Start recipes startRes req |> printfn "%A"
     )
     form.FormClosing.Add(fun _ ->
-        Json.serf bdpath reciples
+        Json.serf bdpath recipes
 
-        Seq.map (fun (KeyValue(k, v)) -> sprintf "%A" (k, v)) reciples
-        |> uncurry System.IO.File.WriteAllLines "reciplesRaw.txt"
+        Seq.map (fun (KeyValue(k, v)) -> sprintf "%A" (k, v)) recipes
+        |> uncurry System.IO.File.WriteAllLines "recipesRaw.txt"
     )
 
 [<STAThread; EntryPoint>]

@@ -1,4 +1,4 @@
-﻿namespace RecipleInputForm
+﻿namespace RecipeInputForm
 {
     partial class Form1
     {

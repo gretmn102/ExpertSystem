@@ -11,7 +11,7 @@
 #load "expander.fs"
 #endif
 open FsharpMyExtension
-type ReciplesType = (string * (int * (string * int) list)) list
+type RecipesType = (string * (int * (string * int) list)) list
 
 // что делать с "forge hammer"?
 // Суть: для получения "iron plate" использует "forge hammer" и "iron ingot".
@@ -34,11 +34,11 @@ type ReciplesType = (string * (int * (string * int) list)) list
 // Про устройства с электропотреблением и модификациями -- и говорить нечего: та еще морока.
 
 let temperyFunction () =
-    let reciples =
-        let reciples : ReciplesType =
+    let recipes =
+        let recipes : RecipesType =
             Json.desf @"E:\Project\ExpertSystem\ExpertSystem\ExpertSystem\bin\Debug\net45\bd.dat"
-        Map.ofList reciples
-    // Map.find "industrial workbench" reciples
+        Map.ofList recipes
+    // Map.find "industrial workbench" recipes
     let stocks = 
         [
             "forge hummer", 999
@@ -57,8 +57,8 @@ let temperyFunction () =
     let req = "nuclear reactor", 1
     // let req = "blast furnace", 1
     // let req = "blast furnace", 1
-    Expander.expandWithTest reciples (Map.ofList stocks) req
+    Expander.expandWithTest recipes (Map.ofList stocks) req
     |> List.filter (List.isEmpty >> not)
     // |> List.iter (printfn "%A")
 
-    Map.find "crushed copper ore" reciples
+    Map.find "crushed copper ore" recipes

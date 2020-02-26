@@ -1,4 +1,4 @@
-﻿#I @"e:\Project\FsharpMyExtension\FsharpMyExtension\FsharpMyExtension\bin\Debug\net461\"
+#I @"e:\Project\FsharpMyExtension\FsharpMyExtension\FsharpMyExtension\bin\Debug\net461\"
 #r @"FParsecCS.dll"
 #r @"FParsec.dll"
 #r @"Fuchu.dll"
@@ -14,18 +14,18 @@ open FsharpMyExtension.Tree
 open Expander
 
 let expandTest () =
-    let reciples : Reciples =
+    let recipes : Recipes =
         Json.desf @"Info\OldDBs\starbound.json"
     let stocks : Map<ItemName, HaveInStock> = Map.ofList []
     let req = ("крафт", 1)
 
     let stocksFinal, tree =
-        expand2.expandNotMod reciples req
+        expand2.expandNotMod recipes req
         |> expand2.expand stocks
 
     let xss = expand2.makes tree
     let exp =
-        List.fold (assemble reciples) stocks xss
+        List.fold (assemble recipes) stocks xss
     let act =
         stocksFinal
         |> Map.addOrMod (fst req) (snd req) ((+) (snd req))
@@ -34,16 +34,16 @@ let expandTest () =
 
 module realSample =
     /// Заменяет название предметов на [a, b, c, ...]
-    let simples reciples =
-        let reciples = Map.toList reciples
+    let simples recipes =
+        let recipes = Map.toList recipes
         let rec f acc i = function
             | h::t -> f ((h, char i |> string)::acc) (i + 1) t
             | [] -> List.rev acc
-        let dic = List.map fst reciples |> f [] (int 'a') |> Map.ofList
-        reciples
+        let dic = List.map fst recipes |> f [] (int 'a') |> Map.ofList
+        recipes
         |> List.map (fun (name, (made, xs)) -> dic.[name], (made, List.map (fun (x, need) -> Map.find x dic, need) xs))
         |> Map.ofList
-    let reciples : Expander.Reciples =
+    let recipes : Expander.Recipes =
         [
             "alchemy engine", (1, ["boards", 4; "cut stone", 2; "electrical doodad", 2])
             "boards", (1, ["log", 4])
@@ -53,16 +53,16 @@ module realSample =
             "rocks", (1, []);
             "gold nugged", (1, [])
         ] |> Map.ofList
-    //let reciples2 = simples reciples
+    //let recipes2 = simples recipes
     let startRes = [ "b", 8 ] |> Map.ofList
     let req = "alchemy engine", 1
-    simples reciples
-    Expander.expand reciples req |> Tree.visualize |> printfn "%s"
-    let (res, result) = Expander.expand2 reciples startRes req
-    Expander.assemble reciples (Map.ofList res) result
+    simples recipes
+    Expander.expand recipes req |> Tree.visualize |> printfn "%s"
+    let (res, result) = Expander.expand2 recipes startRes req
+    Expander.assemble recipes (Map.ofList res) result
     |> ignore
 
-// module reciplesMod =
+// module recipesMod =
 //     let state1 =
 //         [ ("a", (1, [("f", 1); ("b", 1)]));
 //             ("b", (1, [("f", 1)]));
@@ -77,10 +77,10 @@ module realSample =
 //         ("iron", (1, []));
 //         ("craft", (1, [("iron casing", 2); ("iron plate", 1)]));
 //         ] |> Map.ofList
-// let reciples = reciplesMod.state2
+// let recipes = recipesMod.state2
 // let req = ("craft", 1)
 // let res = Map["iron plate", 1]
-// let x = Expander.expandNotMod reciples req
+// let x = Expander.expandNotMod recipes req
 // Tree.visualize (sprintf "%A") x |> printfn "%s"
 // let (r, t) = Expander.expand2.expand res x
 // Tree.visualize (sprintf "%A") t |> printfn "%s"
@@ -91,7 +91,7 @@ module realSample =
 //     List.head raw, List.tail raw |> List.concat
 
 // let resources = List.fold Expander.expand2.give res res'
-// Expander.assemble reciples resources makes' |> printfn "%A"
+// Expander.assemble recipes resources makes' |> printfn "%A"
 
 // module test1 =
 //     let raw = Node (("a", 1, 1), [Node(("b", 1, 1), [])])

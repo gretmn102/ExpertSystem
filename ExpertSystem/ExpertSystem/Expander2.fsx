@@ -1,4 +1,4 @@
-﻿#I @"e:\Project\FsharpMyExtension\FsharpMyExtension\FsharpMyExtension\bin\Debug\net461\"
+#I @"e:\Project\FsharpMyExtension\FsharpMyExtension\FsharpMyExtension\bin\Debug\net461\"
 #r @"FParsecCS.dll"
 #r @"FParsec.dll"
 #r @"Fuchu.dll"
@@ -24,9 +24,9 @@ module Prod =
     let getIngr { Ingr = x } = x
 
 /// а что оно делает?..
-let expand reciples = 
+let expand recipes = 
     let rec expa last ((name, count:CountProd) as curr) = 
-        let x = Map.find name reciples
+        let x = Map.find name recipes
         float x.ProdCount / float count |> ceil |> int |>
         s (fun coeff ->
             cond (fun ingrs ->
@@ -56,8 +56,8 @@ module Prod2 =
     let getName { P = x } = x.Name
     let getProdCount { P = p } = p.ProdCount
 
-type ReciplesType = (string * (int * (string * int) list)) list
-let reciples (lst: ReciplesType) =
+type RecipesType = (string * (int * (string * int) list)) list
+let recipes (lst: RecipesType) =
     lst
     |> List.map (fun (x, (count, xs)) -> List.partition (fst >> (=) "gold") xs |> (function [], _ -> None, (x, (count, xs)) | [_,n], xs -> Some n, (x, (count, xs)) | x -> failwithf "many golds:\n%A" x))
     |> List.fold (fun st (g, (name,(count, ingr))) -> Map.add name { P = { Name = name; ProdCount = count; Ingr = Map.ofList ingr }; Price = g; } st ) Map.empty
@@ -65,15 +65,15 @@ let reciples (lst: ReciplesType) =
 //let remNotPrice m = Map.choose (fun _ x -> Prod2.getPrice x |> Option.bind (fun p -> if Prod2.getIngr x |> Map.forall (fun name _ -> Map.find name m |> (Prod2.getPrice >> Option.isSome)) then Some { P = x.P; Price = p; } else None ) ) m
 //
 //let recip lst =
-//    reciples lst |> //fun reciples ->
-//    s (fun reciples reciplesP -> reciples |> Map.map (fun name x -> expand reciplesP (name, Prod2.getProdCount x) |> fun t -> Tree.leafs t |> fun xs -> { x with P = { x.P with Ingr = Map.ofList xs; ProdCount = Tree.get t |> snd }}) |> remNotPrice)
+//    recipes lst |> //fun recipes ->
+//    s (fun recipes recipesP -> recipes |> Map.map (fun name x -> expand recipesP (name, Prod2.getProdCount x) |> fun t -> Tree.leafs t |> fun xs -> { x with P = { x.P with Ingr = Map.ofList xs; ProdCount = Tree.get t |> snd }}) |> remNotPrice)
 //      (Map.map <| konst id Prod2.getProd)
-//    (*reciples |> Map.map (konst id Prod2.getProd) |> fun reciplesP ->
-//    reciples |> Map.map (fun name x -> expand reciplesP (name, Prod2.getProdCount x) |> fun t -> Tree.leafs t |> fun xs -> { x with P = { x.P with Ingr = Map.ofList xs; ProdCount = Tree.get t |> snd }}) |> remNotPrice *)
-//    //reciples lst |> Map.map (fun name x -> failwith "" )
+//    (*recipes |> Map.map (konst id Prod2.getProd) |> fun recipesP ->
+//    recipes |> Map.map (fun name x -> expand recipesP (name, Prod2.getProdCount x) |> fun t -> Tree.leafs t |> fun xs -> { x with P = { x.P with Ingr = Map.ofList xs; ProdCount = Tree.get t |> snd }}) |> remNotPrice *)
+//    //recipes lst |> Map.map (fun name x -> failwith "" )
 
 
-let makeBased m = m |> s (fun reciples reciplesP -> reciples |> Map.map (fun name x -> expand reciplesP (name, Prod2.getProdCount x) |> fun t -> Tree.leafs t |> fun xs -> { x with P = { x.P with Ingr = Map.reducef fst (snd >> (+)) 0 Map.empty xs; ProdCount = Tree.getValue t |> snd }})) (Map.map <| konst id Prod2.getProd)
+let makeBased m = m |> s (fun recipes recipesP -> recipes |> Map.map (fun name x -> expand recipesP (name, Prod2.getProdCount x) |> fun t -> Tree.leafs t |> fun xs -> { x with P = { x.P with Ingr = Map.reducef fst (snd >> (+)) 0 Map.empty xs; ProdCount = Tree.getValue t |> snd }})) (Map.map <| konst id Prod2.getProd)
 
 
 let recipWithPrices = 
@@ -94,28 +94,28 @@ let convertToMaple give given recip =
     [xs |> List.map (mapFst fn >> curry (sprintf "%s <= %d")) |> String.concat ", "; prof'] |> fun xs -> System.IO.File.WriteAllLines(@"e:\forMaple.txt", xs)
     m
 
-let readFromMaple (reciples:ReciplesType) m =
+let readFromMaple (recipes:RecipesType) m =
     let asd =
         let s = System.IO.File.ReadAllText @"e:\fromMaple.txt"
         s |> fun x -> System.Text.RegularExpressions.Regex.Matches(x, "(x\d+) = (\d+)") |>  Seq.cast<System.Text.RegularExpressions.Match> |> Seq.map (fun x -> if x.Success then x.Groups |> fun x -> x.[1].Value, int x.[2].Value  else failwithf "%A" x) |> List.ofSeq
     let unterpm = m |> Map.toList |> List.map (curry <| flip comma) |> Map.ofList // |> ( List.map << flip Map.find)
     asd |> List.map (mapFst <| flip Map.find unterpm) |> List.filter (snd >> ((<>) 0))
 
-let give reciples =
+let give recipes =
     System.IO.File.ReadAllLines(@"e:\currstate.txt", System.Text.Encoding.GetEncoding "windows-1251") |> List.ofArray |> List.map (FsharpMyExtension.Show.split '\t' >> function [|name; count|] -> name, (System.Text.RegularExpressions.Regex.Matches(count, "\d+") |> cond (function null -> false | _ -> true) (Seq.cast<System.Text.RegularExpressions.Match> >> Seq.sumBy(fun x -> int x.Value)) (fun _ -> failwithf "%A" name)) | x -> failwithf "%A" x)
-    //|> List.head |> fst |> flip Map.tryFind reciples
-    |> fun xs -> xs |> List.map (fst >> s (fun x -> cond Option.isNone (fun _ -> printfn "%A" x; reciples |> Map.exists (fun _ v -> Prod2.getIngr v |> Map.exists (konst ((=) x))) |> cond id (konst id ()) (fun _ -> failwithf "not found %A" x)) (konst id ())) (flip Map.tryFind reciples)) |> ignore; xs
+    //|> List.head |> fst |> flip Map.tryFind recipes
+    |> fun xs -> xs |> List.map (fst >> s (fun x -> cond Option.isNone (fun _ -> printfn "%A" x; recipes |> Map.exists (fun _ v -> Prod2.getIngr v |> Map.exists (konst ((=) x))) |> cond id (konst id ()) (fun _ -> failwithf "not found %A" x)) (konst id ())) (flip Map.tryFind recipes)) |> ignore; xs
 
 let given give = give |> List.map (mapSnd (fun c -> [], c)) |> Map.ofList
 
 let res () =
-    let lst = System.IO.File.ReadAllText @"e:\Project\ExpertSystem\ExpertSystem\bin\Debug\bd.dat" |> fun x -> Newtonsoft.Json.JsonConvert.DeserializeObject<ReciplesType> x
-    let reciples' = reciples lst
-    //(Map.map <| konst id Prod2.getProd) reciples' |> flip expand ("картофельная решетка", 1)
-    let recip = recipWithPrices reciples'
+    let lst = System.IO.File.ReadAllText @"e:\Project\ExpertSystem\ExpertSystem\bin\Debug\bd.dat" |> fun x -> Newtonsoft.Json.JsonConvert.DeserializeObject<RecipesType> x
+    let recipes' = recipes lst
+    //(Map.map <| konst id Prod2.getProd) recipes' |> flip expand ("картофельная решетка", 1)
+    let recip = recipWithPrices recipes'
 
     let m =
-        give reciples' |> fun give ->
+        give recipes' |> fun give ->
         given give |> fun given ->
         convertToMaple give given recip
     //Map.find "картофельная решетка" m
@@ -129,6 +129,6 @@ let res () =
 let asdf lst =
     //let sd m = Map.fold (fun st k -> Prod2.getIngr >> Map.toSeq >> Map.fn fst (fun _ v -> k::v) [] st) Map.empty m
 
-    reciples lst |> Map.fold (fun st k -> Prod2.getIngr >> Map.toSeq >> Map.reducef fst (fun _ v -> k::v) [] st) Map.empty
+    recipes lst |> Map.fold (fun st k -> Prod2.getIngr >> Map.toSeq >> Map.reducef fst (fun _ v -> k::v) [] st) Map.empty
 //let given = give |> List.map (mapSnd (fun c -> [], c)) |> Map.ofList
 

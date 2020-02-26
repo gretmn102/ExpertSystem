@@ -1,11 +1,11 @@
-﻿module Expander
+module Expander
 open FsharpMyExtension
 open FsharpMyExtension.Tree
 
 type ItemName = string
 type Ingredient = ItemName * int
 type OutputCount = int
-type Reciple =
+type Recipe =
     {
         /// Предмет, который можно изготовить по данному рецепту.
         ItemName:ItemName
@@ -15,11 +15,11 @@ type Reciple =
     }
 
 [<Struct>]
-type 'ItemId Reciples when 'ItemId : comparison =
-    Reciples of Map<'ItemId, (int * ('ItemId * int) list)>
+type 'ItemId Recipes when 'ItemId : comparison =
+    Recipes of Map<'ItemId, (int * ('ItemId * int) list)>
 let transformToNewDb path =
-    let oldDb: string Reciples = Json.desf path
-    let (Reciples oldDb) = oldDb
+    let oldDb: string Recipes = Json.desf path
+    let (Recipes oldDb) = oldDb
     oldDb
     |> Map.map (fun name (outputCount, ingrs) ->
         {
@@ -31,23 +31,23 @@ let transformToNewDb path =
     |> Json.serf path
 // System.IO.Directory.EnumerateFiles(@"Info\OldDBs", "*.json")
 // |> Seq.iter transformToNewDb
-type Reciples = Map<ItemName, Reciple>
+type Recipes = Map<ItemName, Recipe>
 /// Количество предметов на складе
 type HaveInStock = int
 
 module expand2 =
-    let expandNotMod (reciples:Reciples) =
+    let expandNotMod (recipes:Recipes) =
         let rec expa last (name, count) =
             let valid xs ys = Set.intersect (set xs) (set ys) |> Set.isEmpty
-            let reciple =
-                Map.tryFind name reciples
+            let recipe =
+                Map.tryFind name recipes
                 |> Option.defaultWith (fun () ->
-                    failwithf "reciple not found '%A'" name)
-            let ingrs = reciple.Ingredients
-            let reciple = name, reciple.OutputCount, count
+                    failwithf "recipe not found '%A'" name)
+            let ingrs = recipe.Ingredients
+            let recipe = name, recipe.OutputCount, count
             if valid last (List.map fst ingrs) then
-                Tree.Node(reciple, List.map (expa (name::last)) ingrs)
-            else Tree.Node(reciple, [])
+                Tree.Node(recipe, List.map (expa (name::last)) ingrs)
+            else Tree.Node(recipe, [])
         expa []
     let give (name, count) =
         Map.addOrMod name count ((+) count)
@@ -105,14 +105,14 @@ module expand2 =
         f' [] tree |> List.rev
 
 
-let expand2Start (reciples:Reciples) (stocks:Map<_, HaveInStock>) req =
-    expand2.expandNotMod reciples req
+let expand2Start (recipes:Recipes) (stocks:Map<_, HaveInStock>) req =
+    expand2.expandNotMod recipes req
     |> expand2.expand stocks
     |> snd
     |> expand2.makes
 
 /// Последовательно собирает предметы.
-let assemble (reciples:Reciples) (stocks:Map<_, HaveInStock>) lst =
+let assemble (recipes:Recipes) (stocks:Map<_, HaveInStock>) lst =
     let get (stocks:Map<'ItemId, _>) (name, count) =
         match Map.tryFind name stocks with
         | Some count' ->
@@ -123,7 +123,7 @@ let assemble (reciples:Reciples) (stocks:Map<_, HaveInStock>) lst =
         | None -> failwithf "%A not found in %A" name stocks
     let f stocks (name, count) =
         let p, ingrs =
-            Map.find name reciples
+            Map.find name recipes
             |> fun x -> x.OutputCount, x.Ingredients
             |> mapPair ((*) count) (List.map (mapSnd ((*) count)))
         List.fold get stocks ingrs

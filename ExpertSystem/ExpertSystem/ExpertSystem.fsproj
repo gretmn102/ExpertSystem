@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -7,8 +7,8 @@
     <Tailcalls>true</Tailcalls>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RecipleInputForm\RecipleInputForm.csproj">
-      <Name>RecipleInputForm.csproj</Name>
+    <ProjectReference Include="..\RecipeInputForm\RecipeInputForm.csproj">
+      <Name>RecipeInputForm.csproj</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -24,7 +24,7 @@
     <None Include="App.config" />
     <Reference Include="System.Runtime" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="..\RecipleInputForm\bin\Debug\RecipleInputForm.dll" />
+    <!-- <Reference Include="..\RecipeInputForm\bin\Debug\RecipeInputForm.dll" /> -->
     <Reference Include="$(FsharpMyExtension)" />
   </ItemGroup>
   <Import Project="..\..\.paket\Paket.Restore.targets" />

@@ -1,4 +1,4 @@
-﻿#I @"e:\Project\FsharpMyExtension\FsharpMyExtension\FsharpMyExtension\bin\Debug\net461\"
+#I @"e:\Project\FsharpMyExtension\FsharpMyExtension\FsharpMyExtension\bin\Debug\net461\"
 #r @"FParsecCS.dll"
 #r @"FParsec.dll"
 #r @"Fuchu.dll"

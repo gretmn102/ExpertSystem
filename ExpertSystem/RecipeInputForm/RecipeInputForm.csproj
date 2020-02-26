@@ -7,8 +7,8 @@
     <ProjectGuid>{8CD000EE-7A3B-40E5-8258-457304B79915}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RecipleInputForm</RootNamespace>
-    <AssemblyName>RecipleInputForm</AssemblyName>
+    <RootNamespace>RecipeInputForm</RootNamespace>
+    <AssemblyName>RecipeInputForm</AssemblyName>
     <!-- <TargetFramework>net461</TargetFramework> -->
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

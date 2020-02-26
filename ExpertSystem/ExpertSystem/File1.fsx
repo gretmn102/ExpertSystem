@@ -1,4 +1,4 @@
-﻿#I @"e:\Project\FsharpMyExtension\FsharpMyExtension\FsharpMyExtension\bin\Debug\net461\"
+#I @"e:\Project\FsharpMyExtension\FsharpMyExtension\FsharpMyExtension\bin\Debug\net461\"
 #r @"FParsecCS.dll"
 #r @"FParsec.dll"
 #r @"Fuchu.dll"
@@ -9,7 +9,7 @@
 
 #if INTERACTIVE
 #load "Expander.fs"
-#r @"..\..\ExpertSystem\RecipleInputForm\bin\Debug\RecipleInputForm.dll"
+#r @"..\..\ExpertSystem\RecipeInputForm\bin\Debug\RecipeInputForm.dll"
 #load "Program.fs"
 #endif
 
@@ -33,22 +33,22 @@ type Cost = int
 
 module BruteSolve =
     open Expander
-    let splitCost costName (reciplesDb:Program.Reciples) =
-        reciplesDb
-        |> Map.mapFold (fun costs name reciple ->
+    let splitCost costName (recipesDb:Program.Recipes) =
+        recipesDb
+        |> Map.mapFold (fun costs name recipe ->
             let costs', rests =
-                List.partition (fst >> (=) costName) reciple.Ingredients
+                List.partition (fst >> (=) costName) recipe.Ingredients
             let costs =
                 match costs' with
                 | [_, cost] -> Map.add name (cost:Cost) costs
                 | [] -> costs
                 | xs -> failwithf "many items with '%s':\n%A" costName xs
 
-            let reciple = { reciple with Ingredients = rests }
-            reciple, costs) Map.empty
+            let recipe = { recipe with Ingredients = rests }
+            recipe, costs) Map.empty
         |> mapFst (fun x -> Map.remove costName x)
 
-    let brute reciples (costs:Map<ItemName,int>) (stock:Map<ItemName, HaveInStock>) =
+    let brute recipes (costs:Map<ItemName,int>) (stock:Map<ItemName, HaveInStock>) =
         let rec loop (stock:Map<ItemName, HaveInStock>) =
             let rec remFromStock (stock:Map<ItemName, HaveInStock>) = function
                 | (name, count)::xs ->
@@ -62,16 +62,16 @@ module BruteSolve =
                     | None -> None
                 | [] -> Some stock
 
-            reciples
+            recipes
             |> Map.toList
-            |> List.choose (fun (_, reciple) ->
-                if List.isEmpty reciple.Ingredients then None
+            |> List.choose (fun (_, recipe) ->
+                if List.isEmpty recipe.Ingredients then None
                 else
-                    match remFromStock stock reciple.Ingredients with
+                    match remFromStock stock recipe.Ingredients with
                     | Some stock ->
                         stock
-                        |> Map.addOrMod reciple.ItemName reciple.OutputCount
-                            ((+) reciple.OutputCount)
+                        |> Map.addOrMod recipe.ItemName recipe.OutputCount
+                            ((+) recipe.OutputCount)
                         |> fun stock ->
                             let profit = 
                                 stock
@@ -83,19 +83,19 @@ module BruteSolve =
                                         // printfn "%A" name
                                         acc
                                         ) 0
-                            Node((reciple.ItemName, profit), loop stock)
+                            Node((recipe.ItemName, profit), loop stock)
                             |> Some
                     | None -> None
             )
         loop stock
     let test () =
-        let reciples, costs =
-            let reciplesDb =
+        let recipes, costs =
+            let recipesDb =
                 let path = @"Info\OldDBs\starbound.json"
                 // let path = @"ExpertSystem\ExpertSystem\bin\Debug\net461\bd.json"
-                let db:Program.Reciples = Json.desf path
+                let db:Program.Recipes = Json.desf path
                 db
-            splitCost "gold" reciplesDb
+            splitCost "gold" recipesDb
         let inputExample =
             [
             //  ("какао-стручок", 19);
@@ -109,13 +109,13 @@ module BruteSolve =
             //  ("сочносливка", 5); ("ананас", 1)
             ]
             |> Map.ofList
-        let res = brute reciples costs inputExample
+        let res = brute recipes costs inputExample
         Node(("", 0), res) |> Tree.visualize (sprintf "%A")
         res |> Tree.unpack
 
 type ProductName = string
 type ProductIngr = ProductName * int
-type 'Price Reciple =
+type 'Price Recipe =
     {
         Name:ProductName
         ProdCount:int
@@ -123,12 +123,12 @@ type 'Price Reciple =
         Price:'Price
     }
 
-let expand reciples =
+let expand recipes =
     let rec expa last ((name, count) as curr) =
         let valid xs ys = Set.intersect (set xs) (set ys) |> Set.isEmpty
 
         let p, ingrs =
-            let { ProdCount = p; Ingrs = ingrs } = Map.find name reciples // crafts.[name]
+            let { ProdCount = p; Ingrs = ingrs } = Map.find name recipes // crafts.[name]
             let coeff = (float count/ float p) |> ceil |> int
             coeff * p, ingrs |> List.map (function n, c -> n, coeff * c)
         if valid last (List.map fst ingrs) then
@@ -146,11 +146,11 @@ assert
     |> flip expand ("a", 1)
     true
 
-let toNewReciples costName (reciplesDb:Program.Reciples) =
-    reciplesDb
+let toNewRecipes costName (recipesDb:Program.Recipes) =
+    recipesDb
     |> Map.toList
-    |> List.map (fun (name, reciple) ->
-        let count, xs = reciple.OutputCount, reciple.Ingredients
+    |> List.map (fun (name, recipe) ->
+        let count, xs = recipe.OutputCount, recipe.Ingredients
         List.partition (fst >> (=) costName) xs
         |> (function
             | [], _ -> None, (name, (count, xs))
@@ -160,12 +160,12 @@ let toNewReciples costName (reciplesDb:Program.Reciples) =
         let v = { Name = name; Price = g; ProdCount = count; Ingrs = ingr }
         Map.add name v st ) Map.empty
 
-let reciplesDb =
+let recipesDb =
     let path = @"Info\OldDBs\starbound.json"
     // let path = @"ExpertSystem\ExpertSystem\bin\Debug\net461\bd.json"
-    let db:Program.Reciples = Json.desf path
+    let db:Program.Recipes = Json.desf path
     db
-let newReciples = toNewReciples "gold" reciplesDb
+let newRecipes = toNewRecipes "gold" recipesDb
 
 let print xs =
     Seq.map (sprintf "%A") xs
@@ -191,15 +191,15 @@ let recip =
                     // |> Some
                 // else None
                 ) ) m
-    newReciples
+    newRecipes
     |> Map.map (fun name x ->
-        Map.find name newReciples
-        |> fun x -> expand newReciples (name, x.ProdCount)
+        Map.find name newRecipes
+        |> fun x -> expand newRecipes (name, x.ProdCount)
         |> fun t ->
             Tree.leafs t
             |> fun xs -> { x with Ingrs = xs; ProdCount = Tree.getValue t |> snd })
     |> remNotPrice
-// reciples |> print |> Clipboard.setText
+// recipes |> print |> Clipboard.setText
 // recip  |> print |> Clipboard.setText
 
 
@@ -219,7 +219,7 @@ let getInput inputPath =
                         (fun _ -> failwithf "%A" name)
                 (name:ProductName), (count:Expander.HaveInStock)
             | x -> failwithf "%A" x)
-    //|> List.head |> fst |> flip Map.tryFind reciples
+    //|> List.head |> fst |> flip Map.tryFind recipes
     |> fun xs ->
         xs
         |> List.iter (
@@ -229,14 +229,14 @@ let getInput inputPath =
                         Option.isNone
                         (fun _ ->
                             printfn "%A" x
-                            newReciples
+                            newRecipes
                             |> Map.exists (fun _ v ->
                                 v.Ingrs
                                 |> List.exists (fst >> ((=) x)))
                             |> cond id (konst id ())
                                 (fun _ -> failwithf "not found %A" x))
                         (konst id ()))
-                    (flip Map.tryFind newReciples))
+                    (flip Map.tryFind newRecipes))
         xs
 
 let inputPath = @"Info\Maple\input.txt"
@@ -256,25 +256,25 @@ let constraints, profits =
         |> List.map (mapSnd (fun c -> [], c))
         |> Map.ofList
     recip
-    |> Map.fold (fun ((constraints, profits) as st) _ reciple ->
-        if Map.containsKey reciple.Name given then st
+    |> Map.fold (fun ((constraints, profits) as st) _ recipe ->
+        if Map.containsKey recipe.Name given then st
         else
             let profits =
                 let isValid =
-                    reciple.Ingrs
+                    recipe.Ingrs
                     |> List.forall (
                         fst
                         >> fun name -> input |> List.exists (fst >> (=) name))
                 if isValid then
-                    ((reciple.Name:ProductName), (reciple.Price:ProductCost))::profits
+                    ((recipe.Name:ProductName), (recipe.Price:ProductCost))::profits
                 else profits
             let constraints =
-                reciple.Ingrs
+                recipe.Ingrs
                 |> List.fold (fun st (name, count) ->
                     Map.tryFind name st
                     |> Option.map (
                         mapFst (fun xs ->
-                            ((reciple.Name, count):ProductIngr)::xs)
+                            ((recipe.Name, count):ProductIngr)::xs)
                         >> fun x -> Map.add name x st)
                     |> Option.defaultValue st ) constraints
             constraints, profits
@@ -331,16 +331,16 @@ let readFromMaple (m:Map<ProductName, VarName>) =
     |> List.filter (snd >> ((<>) 0))
 
 let expand3 (xs:(ProductName * _) list) =
-    let reciples =
-        let reciple =
+    let recipes =
+        let recipe =
             {
                 Expander.Ingredients = xs
                 Expander.ItemName = "крафт"
                 Expander.OutputCount = 1
             }
-        Map.add "крафт" reciple reciplesDb
-        // |> Expander.Reciples
-    Expander.expand2Start reciples Map.empty ("крафт", 1)
+        Map.add "крафт" recipe recipesDb
+        // |> Expander.Recipes
+    Expander.expand2Start recipes Map.empty ("крафт", 1)
 
 let m = convertToMaple ()
 // m |> Map.toList |> sprintf "%A" |> Clipboard.setText
@@ -391,7 +391,7 @@ result |> expand3 |> printfn "%A"
 
 let profitEval =
     List.sumBy (fun ((name:ProductName), count) ->
-        let y = Map.find name newReciples
+        let y = Map.find name newRecipes
         y.Price
         |> Option.map ((*) count)
         |> Option.defaultValue 0
@@ -482,7 +482,7 @@ module MySolve =
     res2 |> List.map (List.map float >> Array.ofList) |> Array.ofList |> simplexMaximize |> simplexMaximize |> simplexMaximize |> simplexMaximize |> simplexMaximize |> simplexMaximize |> simplexMaximize |> simplexMaximize |> simplexMaximize |> simplexMaximize |> simplexMaximize |> simplexMaximize |> simplexMaximize |> simplexMaximize |> simplexMaximize |> simplexMaximize |> simplexMaximize |> simplexMaximize |> simplexMaximize
     res2
     ss
-    //reciples |> Seq.map (fun (KeyValue(k, _)) -> res k ) |> Seq.nth 36 // |> Seq.sortBy (function _,_,_,x -> x) |> print
-    Seq.nth 36 newReciples
-    newReciples.["шоколад"]
-    newReciples.["какао-стручок"]
+    //recipes |> Seq.map (fun (KeyValue(k, _)) -> res k ) |> Seq.nth 36 // |> Seq.sortBy (function _,_,_,x -> x) |> print
+    Seq.nth 36 newRecipes
+    newRecipes.["шоколад"]
+    newRecipes.["какао-стручок"]
