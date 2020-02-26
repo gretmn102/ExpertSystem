@@ -1,1323 +1,1439 @@
 {
-  "Case": "Reciples",
-  "Fields": [
-    {
-      "aglet": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "anklet of the wind": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "antlion mandible": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "anvil": {
-        "Item1": 999,
-        "Item2": [
-          {
-            "Item1": "work bench",
-            "Item2": 1
-          },
-          {
-            "Item1": "iron bar",
-            "Item2": 5
-          }
-        ]
-      },
-      "autohammer": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "bed": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "wood",
-            "Item2": 15
-          },
-          {
-            "Item1": "silk",
-            "Item2": 5
-          },
-          {
-            "Item1": "sawmill",
-            "Item2": 1
-          }
-        ]
-      },
-      "blinkroot": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "blood butcherer": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "crimtane bar",
-            "Item2": 10
-          },
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          }
-        ]
-      },
-      "bottle": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "glass",
-            "Item2": 2
-          }
-        ]
-      },
-      "bottled water": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "bottle",
-            "Item2": 1
-          }
-        ]
-      },
-      "chain": {
-        "Item1": 10,
-        "Item2": [
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          },
-          {
-            "Item1": "iron bar",
-            "Item2": 1
-          }
-        ]
-      },
-      "chlorophyte bar": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "chlorophyte ore",
-            "Item2": 6
-          },
-          {
-            "Item1": "titanium forge",
-            "Item2": 1
-          }
-        ]
-      },
-      "chlorophyte greaves": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "chlorophyte bar",
-            "Item2": 18
-          },
-          {
-            "Item1": "orichalcum anvil",
-            "Item2": 1
-          }
-        ]
-      },
-      "chlorophyte headgear": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "chlorophyte bar",
-            "Item2": 12
-          },
-          {
-            "Item1": "orichalcum anvil",
-            "Item2": 1
-          }
-        ]
-      },
-      "chlorophyte helmet": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "chlorophyte bar",
-            "Item2": 12
-          },
-          {
-            "Item1": "orichalcum anvil",
-            "Item2": 1
-          }
-        ]
-      },
-      "chlorophyte mask": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "chlorophyte bar",
-            "Item2": 12
-          },
-          {
-            "Item1": "orichalcum anvil",
-            "Item2": 1
-          }
-        ]
-      },
-      "chlorophyte ore": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "chlorophyte plate mail": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "chlorophyte bar",
-            "Item2": 24
-          },
-          {
-            "Item1": "orichalcum anvil",
-            "Item2": 1
-          }
-        ]
-      },
-      "cobalt bar": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "cobalt ore",
-            "Item2": 3
-          },
-          {
-            "Item1": "furnace",
-            "Item2": 1
-          }
-        ]
-      },
-      "cobalt breastplate": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "cobalt bar",
-            "Item2": 20
-          },
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          }
-        ]
-      },
-      "cobalt hat": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          },
-          {
-            "Item1": "cobalt bar",
-            "Item2": 10
-          }
-        ]
-      },
-      "cobalt helmet": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          },
-          {
-            "Item1": "cobalt bar",
-            "Item2": 10
-          }
-        ]
-      },
-      "cobalt leggings": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          },
-          {
-            "Item1": "cobalt bar",
-            "Item2": 15
-          }
-        ]
-      },
-      "cobalt mask": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "cobalt bar",
-            "Item2": 10
-          },
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          }
-        ]
-      },
-      "cobalt ore": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "cobalt pickaxe": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          },
-          {
-            "Item1": "cobalt bar",
-            "Item2": 15
-          }
-        ]
-      },
-      "cobweb": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "compass": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "craft": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "crimson greaves",
-            "Item2": 1
-          },
-          {
-            "Item1": "crimson helmet",
-            "Item2": 1
-          },
-          {
-            "Item1": "crimson scalemail",
-            "Item2": 1
-          },
-          {
-            "Item1": "deathbringer pickaxe",
-            "Item2": 1
-          },
-          {
-            "Item1": "blood butcherer",
-            "Item2": 1
-          }
-        ]
-      },
-      "craft2": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "molten helmet",
-            "Item2": 1
-          },
-          {
-            "Item1": "molten breastplate",
-            "Item2": 1
-          },
-          {
-            "Item1": "molten greaves",
-            "Item2": 1
-          }
-        ]
-      },
-      "craftChlor": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "chlorophyte helmet",
-            "Item2": 1
-          },
-          {
-            "Item1": "chlorophyte mask",
-            "Item2": 1
-          },
-          {
-            "Item1": "chlorophyte plate mail",
-            "Item2": 1
-          },
-          {
-            "Item1": "chlorophyte greaves",
-            "Item2": 1
-          }
-        ]
-      },
-      "craftCobalt": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "cobalt helmet",
-            "Item2": 1
-          },
-          {
-            "Item1": "cobalt breastplate",
-            "Item2": 1
-          },
-          {
-            "Item1": "cobalt leggings",
-            "Item2": 1
-          }
-        ]
-      },
-      "craftOrichalc": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "orichalcum helmet",
-            "Item2": 1
-          },
-          {
-            "Item1": "orichalcum breastplate",
-            "Item2": 1
-          },
-          {
-            "Item1": "orichalcum leggings",
-            "Item2": 1
-          }
-        ]
-      },
-      "craftShroomite": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "shroomite digging claw",
-            "Item2": 1
-          },
-          {
-            "Item1": "hoverboard",
-            "Item2": 1
-          },
-          {
-            "Item1": "shroomite breastplate",
-            "Item2": 1
-          },
-          {
-            "Item1": "shroomite leggings",
-            "Item2": 1
-          },
-          {
-            "Item1": "shroomite mask",
-            "Item2": 1
-          }
-        ]
-      },
-      "crimson greaves": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "crimtane bar",
-            "Item2": 20
-          },
-          {
-            "Item1": "tissue sample",
-            "Item2": 15
-          }
-        ]
-      },
-      "crimson helmet": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "crimtane bar",
-            "Item2": 15
-          },
-          {
-            "Item1": "tissue sample",
-            "Item2": 10
-          },
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          }
-        ]
-      },
-      "crimson scalemail": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "crimtane bar",
-            "Item2": 25
-          },
-          {
-            "Item1": "tissue sample",
-            "Item2": 20
-          },
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          }
-        ]
-      },
-      "crimtane bar": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "crimtane ore",
-            "Item2": 3
-          },
-          {
-            "Item1": "furnace",
-            "Item2": 1
-          }
-        ]
-      },
-      "crimtane ore": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "daybloom": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "deathbringer pickaxe": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          },
-          {
-            "Item1": "crimtane bar",
-            "Item2": 12
-          },
-          {
-            "Item1": "tissue sample",
-            "Item2": 6
-          }
-        ]
-      },
-      "depth meter": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "feral claws": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "fiery greatsword": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          },
-          {
-            "Item1": "hellstone bar",
-            "Item2": 20
-          }
-        ]
-      },
-      "furnace": {
-        "Item1": 999,
-        "Item2": [
-          {
-            "Item1": "stone block",
-            "Item2": 20
-          },
-          {
-            "Item1": "wood",
-            "Item2": 4
-          },
-          {
-            "Item1": "torch",
-            "Item2": 3
-          }
-        ]
-      },
-      "gel": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "glass": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "sand block",
-            "Item2": 2
-          },
-          {
-            "Item1": "furnace",
-            "Item2": 1
-          }
-        ]
-      },
-      "glowing mushroom": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "gps": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "platinum watch",
-            "Item2": 1
-          },
-          {
-            "Item1": "depth meter",
-            "Item2": 1
-          },
-          {
-            "Item1": "compass",
-            "Item2": 1
-          }
-        ]
-      },
-      "hard mode, mimic, 14.29%": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "hellforge": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "hellstone": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "hellstone bar": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          },
-          {
-            "Item1": "hellstone",
-            "Item2": 3
-          },
-          {
-            "Item1": "obsidian",
-            "Item2": 1
-          }
-        ]
-      },
-      "hermes boots": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "hoverboard": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "soul of flight",
-            "Item2": 20
-          },
-          {
-            "Item1": "shroomite bar",
-            "Item2": 18
-          },
-          {
-            "Item1": "orichalcum anvil",
-            "Item2": 1
-          }
-        ]
-      },
-      "illegal gun parts": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "{ Trade: \"Arms Dealer\"; Gold : \"20\" }",
-            "Item2": 1
-          }
-        ]
-      },
-      "imp staff": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          },
-          {
-            "Item1": "hellstone bar",
-            "Item2": 17
-          }
-        ]
-      },
-      "iron bar": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "iron ore",
-            "Item2": 3
-          }
-        ]
-      },
-      "iron ore": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "ironskin potion": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "bottled water",
-            "Item2": 1
-          },
-          {
-            "Item1": "daybloom",
-            "Item2": 1
-          },
-          {
-            "Item1": "iron ore",
-            "Item2": 1
-          }
-        ]
-      },
-      "lightning boots": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "spectre boots",
-            "Item2": 1
-          },
-          {
-            "Item1": "anklet of the wind",
-            "Item2": 1
-          },
-          {
-            "Item1": "aglet",
-            "Item2": 1
-          }
-        ]
-      },
-      "megashark": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "minishark",
-            "Item2": 1
-          },
-          {
-            "Item1": "illegal gun parts",
-            "Item2": 1
-          },
-          {
-            "Item1": "shark fin",
-            "Item2": 5
-          },
-          {
-            "Item1": "soul of might",
-            "Item2": 20
-          }
-        ]
-      },
-      "meteor hamaxe": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "meteorite bar",
-            "Item2": 20
-          },
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          }
-        ]
-      },
-      "meteor helmet": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "meteorite bar",
-            "Item2": 10
-          },
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          }
-        ]
-      },
-      "meteor leggings": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          },
-          {
-            "Item1": "meteorite bar",
-            "Item2": 15
-          }
-        ]
-      },
-      "meteor suit": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "meteorite bar",
-            "Item2": 20
-          },
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          }
-        ]
-      },
-      "meteorite": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "meteorite bar": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "meteorite",
-            "Item2": 3
-          },
-          {
-            "Item1": "furnace",
-            "Item2": 1
-          }
-        ]
-      },
-      "mining potion": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "bottled water",
-            "Item2": 1
-          },
-          {
-            "Item1": "antlion mandible",
-            "Item2": 1
-          },
-          {
-            "Item1": "blinkroot",
-            "Item2": 1
-          }
-        ]
-      },
-      "minishark": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "{ Trade: \"Arms Dealer\"; Gold : \"35\" }",
-            "Item2": 1
-          }
-        ]
-      },
-      "molten breastplate": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          },
-          {
-            "Item1": "hellstone bar",
-            "Item2": 20
-          }
-        ]
-      },
-      "molten greaves": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          },
-          {
-            "Item1": "hellstone bar",
-            "Item2": 15
-          }
-        ]
-      },
-      "molten hamaxe": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          },
-          {
-            "Item1": "hellstone bar",
-            "Item2": 15
-          }
-        ]
-      },
-      "molten helmet": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          },
-          {
-            "Item1": "hellstone bar",
-            "Item2": 10
-          }
-        ]
-      },
-      "molten pickaxe": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          },
-          {
-            "Item1": "hellstone bar",
-            "Item2": 20
-          }
-        ]
-      },
-      "moonglow": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "obsidian": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "orichalcum anvil": {
-        "Item1": 999,
-        "Item2": [
-          {
-            "Item1": "orichalcum bar",
-            "Item2": 12
-          },
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          }
-        ]
-      },
-      "orichalcum bar": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "orichalcum ore",
-            "Item2": 4
-          },
-          {
-            "Item1": "furnace",
-            "Item2": 1
-          }
-        ]
-      },
-      "orichalcum breastplate": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "orichalcum anvil",
-            "Item2": 1
-          },
-          {
-            "Item1": "orichalcum bar",
-            "Item2": 24
-          }
-        ]
-      },
-      "orichalcum headgear": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "orichalcum anvil",
-            "Item2": 1
-          },
-          {
-            "Item1": "orichalcum bar",
-            "Item2": 12
-          }
-        ]
-      },
-      "orichalcum helmet": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "orichalcum anvil",
-            "Item2": 1
-          },
-          {
-            "Item1": "orichalcum bar",
-            "Item2": 12
-          }
-        ]
-      },
-      "orichalcum leggings": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "orichalcum anvil",
-            "Item2": 1
-          },
-          {
-            "Item1": "orichalcum bar",
-            "Item2": 18
-          }
-        ]
-      },
-      "orichalcum mask": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "orichalcum anvil",
-            "Item2": 1
-          },
-          {
-            "Item1": "orichalcum bar",
-            "Item2": 12
-          }
-        ]
-      },
-      "orichalcum ore": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "orichalcum pickaxe": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "orichalcum anvil",
-            "Item2": 1
-          },
-          {
-            "Item1": "orichalcum bar",
-            "Item2": 18
-          }
-        ]
-      },
-      "platinum bar": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "platinum ore",
-            "Item2": 4
-          }
-        ]
-      },
-      "platinum ore": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "platinum watch": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "platinum bar",
-            "Item2": 10
-          },
-          {
-            "Item1": "chain",
-            "Item2": 1
-          }
-        ]
-      },
-      "power glove": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "titan glove",
-            "Item2": 1
-          },
-          {
-            "Item1": "feral claws",
-            "Item2": 1
-          }
-        ]
-      },
-      "red phaseblade": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "meteorite bar",
-            "Item2": 15
-          },
-          {
-            "Item1": "ruby",
-            "Item2": 10
-          },
-          {
-            "Item1": "anvil",
-            "Item2": 1
-          }
-        ]
-      },
-      "rocket boots": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "ruby": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "sand block": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "sawmill": {
-        "Item1": 999,
-        "Item2": [
-          {
-            "Item1": "work bench",
-            "Item2": 1
-          },
-          {
-            "Item1": "wood",
-            "Item2": 10
-          },
-          {
-            "Item1": "iron bar",
-            "Item2": 2
-          },
-          {
-            "Item1": "chain",
-            "Item2": 1
-          }
-        ]
-      },
-      "shark fin": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "{ Drop: \"Shark\", Chance : 98 }",
-            "Item2": 1
-          }
-        ]
-      },
-      "shroomite bar": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "chlorophyte bar",
-            "Item2": 1
-          },
-          {
-            "Item1": "glowing mushroom",
-            "Item2": 15
-          },
-          {
-            "Item1": "autohammer",
-            "Item2": 1
-          }
-        ]
-      },
-      "shroomite breastplate": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "shroomite bar",
-            "Item2": 24
-          },
-          {
-            "Item1": "orichalcum anvil",
-            "Item2": 1
-          }
-        ]
-      },
-      "shroomite digging claw": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "shroomite bar",
-            "Item2": 18
-          },
-          {
-            "Item1": "orichalcum anvil",
-            "Item2": 1
-          }
-        ]
-      },
-      "shroomite headgear": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "shroomite bar",
-            "Item2": 12
-          },
-          {
-            "Item1": "orichalcum anvil",
-            "Item2": 1
-          }
-        ]
-      },
-      "shroomite helmet": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "shroomite bar",
-            "Item2": 12
-          },
-          {
-            "Item1": "orichalcum anvil",
-            "Item2": 1
-          }
-        ]
-      },
-      "shroomite leggings": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "shroomite bar",
-            "Item2": 18
-          },
-          {
-            "Item1": "orichalcum anvil",
-            "Item2": 1
-          }
-        ]
-      },
-      "shroomite mask": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "shroomite bar",
-            "Item2": 12
-          },
-          {
-            "Item1": "orichalcum anvil",
-            "Item2": 1
-          }
-        ]
-      },
-      "silk": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "cobweb",
-            "Item2": 7
-          }
-        ]
-      },
-      "soul of flight": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "soul of might": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "{ Drop: \"The Destroyer\", Chance:100, Count1:20, Count2:40 }",
-            "Item2": 1
-          }
-        ]
-      },
-      "spectre boots": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "hermes boots",
-            "Item2": 1
-          },
-          {
-            "Item1": "rocket boots",
-            "Item2": 1
-          }
-        ]
-      },
-      "spelunker potion": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "bottled water",
-            "Item2": 1
-          },
-          {
-            "Item1": "blinkroot",
-            "Item2": 1
-          },
-          {
-            "Item1": "moonglow",
-            "Item2": 1
-          },
-          {
-            "Item1": "platinum ore",
-            "Item2": 1
-          }
-        ]
-      },
-      "stone block": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "tissue sample": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "titan glove": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "hard mode, mimic, 14.29%",
-            "Item2": 1
-          }
-        ]
-      },
-      "titanium bar": {
-        "Item1": 1,
-        "Item2": [
-          {
-            "Item1": "titanium ore",
-            "Item2": 5
-          },
-          {
-            "Item1": "titanium forge",
-            "Item2": 1
-          }
-        ]
-      },
-      "titanium forge": {
-        "Item1": 999,
-        "Item2": [
-          {
-            "Item1": "titanium ore",
-            "Item2": 30
-          },
-          {
-            "Item1": "hellforge",
-            "Item2": 1
-          }
-        ]
-      },
-      "titanium ore": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "torch": {
-        "Item1": 3,
-        "Item2": [
-          {
-            "Item1": "gel",
-            "Item2": 1
-          },
-          {
-            "Item1": "wood",
-            "Item2": 1
-          }
-        ]
-      },
-      "wood": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "work bench": {
-        "Item1": 999,
-        "Item2": [
-          {
-            "Item1": "wood",
-            "Item2": 10
-          }
-        ]
-      },
-      "{ Drop: \"Shark\", Chance : 98 }": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "{ Drop: \"The Destroyer\", Chance:100, Count1:20, Count2:40 }": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "{ Trade: \"Arms Dealer\"; Gold : \"20\" }": {
-        "Item1": 1,
-        "Item2": []
-      },
-      "{ Trade: \"Arms Dealer\"; Gold : \"35\" }": {
-        "Item1": 1,
-        "Item2": []
+  "aglet": {
+    "ItemName": "aglet",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "anklet of the wind": {
+    "ItemName": "anklet of the wind",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "antlion mandible": {
+    "ItemName": "antlion mandible",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "anvil": {
+    "ItemName": "anvil",
+    "OutputCount": 999,
+    "Ingredients": [
+      {
+        "Item1": "work bench",
+        "Item2": 1
+      },
+      {
+        "Item1": "iron bar",
+        "Item2": 5
       }
-    }
-  ]
+    ]
+  },
+  "autohammer": {
+    "ItemName": "autohammer",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "bed": {
+    "ItemName": "bed",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "wood",
+        "Item2": 15
+      },
+      {
+        "Item1": "silk",
+        "Item2": 5
+      },
+      {
+        "Item1": "sawmill",
+        "Item2": 1
+      }
+    ]
+  },
+  "blinkroot": {
+    "ItemName": "blinkroot",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "blood butcherer": {
+    "ItemName": "blood butcherer",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "crimtane bar",
+        "Item2": 10
+      },
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      }
+    ]
+  },
+  "bottle": {
+    "ItemName": "bottle",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "glass",
+        "Item2": 2
+      }
+    ]
+  },
+  "bottled water": {
+    "ItemName": "bottled water",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "bottle",
+        "Item2": 1
+      }
+    ]
+  },
+  "chain": {
+    "ItemName": "chain",
+    "OutputCount": 10,
+    "Ingredients": [
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      },
+      {
+        "Item1": "iron bar",
+        "Item2": 1
+      }
+    ]
+  },
+  "chlorophyte bar": {
+    "ItemName": "chlorophyte bar",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "chlorophyte ore",
+        "Item2": 6
+      },
+      {
+        "Item1": "titanium forge",
+        "Item2": 1
+      }
+    ]
+  },
+  "chlorophyte greaves": {
+    "ItemName": "chlorophyte greaves",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "chlorophyte bar",
+        "Item2": 18
+      },
+      {
+        "Item1": "orichalcum anvil",
+        "Item2": 1
+      }
+    ]
+  },
+  "chlorophyte headgear": {
+    "ItemName": "chlorophyte headgear",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "chlorophyte bar",
+        "Item2": 12
+      },
+      {
+        "Item1": "orichalcum anvil",
+        "Item2": 1
+      }
+    ]
+  },
+  "chlorophyte helmet": {
+    "ItemName": "chlorophyte helmet",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "chlorophyte bar",
+        "Item2": 12
+      },
+      {
+        "Item1": "orichalcum anvil",
+        "Item2": 1
+      }
+    ]
+  },
+  "chlorophyte mask": {
+    "ItemName": "chlorophyte mask",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "chlorophyte bar",
+        "Item2": 12
+      },
+      {
+        "Item1": "orichalcum anvil",
+        "Item2": 1
+      }
+    ]
+  },
+  "chlorophyte ore": {
+    "ItemName": "chlorophyte ore",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "chlorophyte plate mail": {
+    "ItemName": "chlorophyte plate mail",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "chlorophyte bar",
+        "Item2": 24
+      },
+      {
+        "Item1": "orichalcum anvil",
+        "Item2": 1
+      }
+    ]
+  },
+  "cobalt bar": {
+    "ItemName": "cobalt bar",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "cobalt ore",
+        "Item2": 3
+      },
+      {
+        "Item1": "furnace",
+        "Item2": 1
+      }
+    ]
+  },
+  "cobalt breastplate": {
+    "ItemName": "cobalt breastplate",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "cobalt bar",
+        "Item2": 20
+      },
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      }
+    ]
+  },
+  "cobalt hat": {
+    "ItemName": "cobalt hat",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      },
+      {
+        "Item1": "cobalt bar",
+        "Item2": 10
+      }
+    ]
+  },
+  "cobalt helmet": {
+    "ItemName": "cobalt helmet",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      },
+      {
+        "Item1": "cobalt bar",
+        "Item2": 10
+      }
+    ]
+  },
+  "cobalt leggings": {
+    "ItemName": "cobalt leggings",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      },
+      {
+        "Item1": "cobalt bar",
+        "Item2": 15
+      }
+    ]
+  },
+  "cobalt mask": {
+    "ItemName": "cobalt mask",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "cobalt bar",
+        "Item2": 10
+      },
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      }
+    ]
+  },
+  "cobalt ore": {
+    "ItemName": "cobalt ore",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "cobalt pickaxe": {
+    "ItemName": "cobalt pickaxe",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      },
+      {
+        "Item1": "cobalt bar",
+        "Item2": 15
+      }
+    ]
+  },
+  "cobweb": {
+    "ItemName": "cobweb",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "compass": {
+    "ItemName": "compass",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "craft": {
+    "ItemName": "craft",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "crimson greaves",
+        "Item2": 1
+      },
+      {
+        "Item1": "crimson helmet",
+        "Item2": 1
+      },
+      {
+        "Item1": "crimson scalemail",
+        "Item2": 1
+      },
+      {
+        "Item1": "deathbringer pickaxe",
+        "Item2": 1
+      },
+      {
+        "Item1": "blood butcherer",
+        "Item2": 1
+      }
+    ]
+  },
+  "craft2": {
+    "ItemName": "craft2",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "molten helmet",
+        "Item2": 1
+      },
+      {
+        "Item1": "molten breastplate",
+        "Item2": 1
+      },
+      {
+        "Item1": "molten greaves",
+        "Item2": 1
+      }
+    ]
+  },
+  "craftChlor": {
+    "ItemName": "craftChlor",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "chlorophyte helmet",
+        "Item2": 1
+      },
+      {
+        "Item1": "chlorophyte mask",
+        "Item2": 1
+      },
+      {
+        "Item1": "chlorophyte plate mail",
+        "Item2": 1
+      },
+      {
+        "Item1": "chlorophyte greaves",
+        "Item2": 1
+      }
+    ]
+  },
+  "craftCobalt": {
+    "ItemName": "craftCobalt",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "cobalt helmet",
+        "Item2": 1
+      },
+      {
+        "Item1": "cobalt breastplate",
+        "Item2": 1
+      },
+      {
+        "Item1": "cobalt leggings",
+        "Item2": 1
+      }
+    ]
+  },
+  "craftOrichalc": {
+    "ItemName": "craftOrichalc",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "orichalcum helmet",
+        "Item2": 1
+      },
+      {
+        "Item1": "orichalcum breastplate",
+        "Item2": 1
+      },
+      {
+        "Item1": "orichalcum leggings",
+        "Item2": 1
+      }
+    ]
+  },
+  "craftShroomite": {
+    "ItemName": "craftShroomite",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "shroomite digging claw",
+        "Item2": 1
+      },
+      {
+        "Item1": "hoverboard",
+        "Item2": 1
+      },
+      {
+        "Item1": "shroomite breastplate",
+        "Item2": 1
+      },
+      {
+        "Item1": "shroomite leggings",
+        "Item2": 1
+      },
+      {
+        "Item1": "shroomite mask",
+        "Item2": 1
+      }
+    ]
+  },
+  "crimson greaves": {
+    "ItemName": "crimson greaves",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "crimtane bar",
+        "Item2": 20
+      },
+      {
+        "Item1": "tissue sample",
+        "Item2": 15
+      }
+    ]
+  },
+  "crimson helmet": {
+    "ItemName": "crimson helmet",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "crimtane bar",
+        "Item2": 15
+      },
+      {
+        "Item1": "tissue sample",
+        "Item2": 10
+      },
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      }
+    ]
+  },
+  "crimson scalemail": {
+    "ItemName": "crimson scalemail",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "crimtane bar",
+        "Item2": 25
+      },
+      {
+        "Item1": "tissue sample",
+        "Item2": 20
+      },
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      }
+    ]
+  },
+  "crimtane bar": {
+    "ItemName": "crimtane bar",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "crimtane ore",
+        "Item2": 3
+      },
+      {
+        "Item1": "furnace",
+        "Item2": 1
+      }
+    ]
+  },
+  "crimtane ore": {
+    "ItemName": "crimtane ore",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "daybloom": {
+    "ItemName": "daybloom",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "deathbringer pickaxe": {
+    "ItemName": "deathbringer pickaxe",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      },
+      {
+        "Item1": "crimtane bar",
+        "Item2": 12
+      },
+      {
+        "Item1": "tissue sample",
+        "Item2": 6
+      }
+    ]
+  },
+  "depth meter": {
+    "ItemName": "depth meter",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "feral claws": {
+    "ItemName": "feral claws",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "fiery greatsword": {
+    "ItemName": "fiery greatsword",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      },
+      {
+        "Item1": "hellstone bar",
+        "Item2": 20
+      }
+    ]
+  },
+  "furnace": {
+    "ItemName": "furnace",
+    "OutputCount": 999,
+    "Ingredients": [
+      {
+        "Item1": "stone block",
+        "Item2": 20
+      },
+      {
+        "Item1": "wood",
+        "Item2": 4
+      },
+      {
+        "Item1": "torch",
+        "Item2": 3
+      }
+    ]
+  },
+  "gel": {
+    "ItemName": "gel",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "glass": {
+    "ItemName": "glass",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "sand block",
+        "Item2": 2
+      },
+      {
+        "Item1": "furnace",
+        "Item2": 1
+      }
+    ]
+  },
+  "glowing mushroom": {
+    "ItemName": "glowing mushroom",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "gps": {
+    "ItemName": "gps",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "platinum watch",
+        "Item2": 1
+      },
+      {
+        "Item1": "depth meter",
+        "Item2": 1
+      },
+      {
+        "Item1": "compass",
+        "Item2": 1
+      }
+    ]
+  },
+  "hard mode, mimic, 14.29%": {
+    "ItemName": "hard mode, mimic, 14.29%",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "hellforge": {
+    "ItemName": "hellforge",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "hellstone": {
+    "ItemName": "hellstone",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "hellstone bar": {
+    "ItemName": "hellstone bar",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      },
+      {
+        "Item1": "hellstone",
+        "Item2": 3
+      },
+      {
+        "Item1": "obsidian",
+        "Item2": 1
+      }
+    ]
+  },
+  "hermes boots": {
+    "ItemName": "hermes boots",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "hoverboard": {
+    "ItemName": "hoverboard",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "soul of flight",
+        "Item2": 20
+      },
+      {
+        "Item1": "shroomite bar",
+        "Item2": 18
+      },
+      {
+        "Item1": "orichalcum anvil",
+        "Item2": 1
+      }
+    ]
+  },
+  "illegal gun parts": {
+    "ItemName": "illegal gun parts",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "{ Trade: \"Arms Dealer\"; Gold : \"20\" }",
+        "Item2": 1
+      }
+    ]
+  },
+  "imp staff": {
+    "ItemName": "imp staff",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      },
+      {
+        "Item1": "hellstone bar",
+        "Item2": 17
+      }
+    ]
+  },
+  "iron bar": {
+    "ItemName": "iron bar",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "iron ore",
+        "Item2": 3
+      }
+    ]
+  },
+  "iron ore": {
+    "ItemName": "iron ore",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "ironskin potion": {
+    "ItemName": "ironskin potion",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "bottled water",
+        "Item2": 1
+      },
+      {
+        "Item1": "daybloom",
+        "Item2": 1
+      },
+      {
+        "Item1": "iron ore",
+        "Item2": 1
+      }
+    ]
+  },
+  "lightning boots": {
+    "ItemName": "lightning boots",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "spectre boots",
+        "Item2": 1
+      },
+      {
+        "Item1": "anklet of the wind",
+        "Item2": 1
+      },
+      {
+        "Item1": "aglet",
+        "Item2": 1
+      }
+    ]
+  },
+  "megashark": {
+    "ItemName": "megashark",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "minishark",
+        "Item2": 1
+      },
+      {
+        "Item1": "illegal gun parts",
+        "Item2": 1
+      },
+      {
+        "Item1": "shark fin",
+        "Item2": 5
+      },
+      {
+        "Item1": "soul of might",
+        "Item2": 20
+      }
+    ]
+  },
+  "meteor hamaxe": {
+    "ItemName": "meteor hamaxe",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "meteorite bar",
+        "Item2": 20
+      },
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      }
+    ]
+  },
+  "meteor helmet": {
+    "ItemName": "meteor helmet",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "meteorite bar",
+        "Item2": 10
+      },
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      }
+    ]
+  },
+  "meteor leggings": {
+    "ItemName": "meteor leggings",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      },
+      {
+        "Item1": "meteorite bar",
+        "Item2": 15
+      }
+    ]
+  },
+  "meteor suit": {
+    "ItemName": "meteor suit",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "meteorite bar",
+        "Item2": 20
+      },
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      }
+    ]
+  },
+  "meteorite": {
+    "ItemName": "meteorite",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "meteorite bar": {
+    "ItemName": "meteorite bar",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "meteorite",
+        "Item2": 3
+      },
+      {
+        "Item1": "furnace",
+        "Item2": 1
+      }
+    ]
+  },
+  "mining potion": {
+    "ItemName": "mining potion",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "bottled water",
+        "Item2": 1
+      },
+      {
+        "Item1": "antlion mandible",
+        "Item2": 1
+      },
+      {
+        "Item1": "blinkroot",
+        "Item2": 1
+      }
+    ]
+  },
+  "minishark": {
+    "ItemName": "minishark",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "{ Trade: \"Arms Dealer\"; Gold : \"35\" }",
+        "Item2": 1
+      }
+    ]
+  },
+  "molten breastplate": {
+    "ItemName": "molten breastplate",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      },
+      {
+        "Item1": "hellstone bar",
+        "Item2": 20
+      }
+    ]
+  },
+  "molten greaves": {
+    "ItemName": "molten greaves",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      },
+      {
+        "Item1": "hellstone bar",
+        "Item2": 15
+      }
+    ]
+  },
+  "molten hamaxe": {
+    "ItemName": "molten hamaxe",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      },
+      {
+        "Item1": "hellstone bar",
+        "Item2": 15
+      }
+    ]
+  },
+  "molten helmet": {
+    "ItemName": "molten helmet",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      },
+      {
+        "Item1": "hellstone bar",
+        "Item2": 10
+      }
+    ]
+  },
+  "molten pickaxe": {
+    "ItemName": "molten pickaxe",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      },
+      {
+        "Item1": "hellstone bar",
+        "Item2": 20
+      }
+    ]
+  },
+  "moonglow": {
+    "ItemName": "moonglow",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "obsidian": {
+    "ItemName": "obsidian",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "orichalcum anvil": {
+    "ItemName": "orichalcum anvil",
+    "OutputCount": 999,
+    "Ingredients": [
+      {
+        "Item1": "orichalcum bar",
+        "Item2": 12
+      },
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      }
+    ]
+  },
+  "orichalcum bar": {
+    "ItemName": "orichalcum bar",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "orichalcum ore",
+        "Item2": 4
+      },
+      {
+        "Item1": "furnace",
+        "Item2": 1
+      }
+    ]
+  },
+  "orichalcum breastplate": {
+    "ItemName": "orichalcum breastplate",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "orichalcum anvil",
+        "Item2": 1
+      },
+      {
+        "Item1": "orichalcum bar",
+        "Item2": 24
+      }
+    ]
+  },
+  "orichalcum headgear": {
+    "ItemName": "orichalcum headgear",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "orichalcum anvil",
+        "Item2": 1
+      },
+      {
+        "Item1": "orichalcum bar",
+        "Item2": 12
+      }
+    ]
+  },
+  "orichalcum helmet": {
+    "ItemName": "orichalcum helmet",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "orichalcum anvil",
+        "Item2": 1
+      },
+      {
+        "Item1": "orichalcum bar",
+        "Item2": 12
+      }
+    ]
+  },
+  "orichalcum leggings": {
+    "ItemName": "orichalcum leggings",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "orichalcum anvil",
+        "Item2": 1
+      },
+      {
+        "Item1": "orichalcum bar",
+        "Item2": 18
+      }
+    ]
+  },
+  "orichalcum mask": {
+    "ItemName": "orichalcum mask",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "orichalcum anvil",
+        "Item2": 1
+      },
+      {
+        "Item1": "orichalcum bar",
+        "Item2": 12
+      }
+    ]
+  },
+  "orichalcum ore": {
+    "ItemName": "orichalcum ore",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "orichalcum pickaxe": {
+    "ItemName": "orichalcum pickaxe",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "orichalcum anvil",
+        "Item2": 1
+      },
+      {
+        "Item1": "orichalcum bar",
+        "Item2": 18
+      }
+    ]
+  },
+  "platinum bar": {
+    "ItemName": "platinum bar",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "platinum ore",
+        "Item2": 4
+      }
+    ]
+  },
+  "platinum ore": {
+    "ItemName": "platinum ore",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "platinum watch": {
+    "ItemName": "platinum watch",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "platinum bar",
+        "Item2": 10
+      },
+      {
+        "Item1": "chain",
+        "Item2": 1
+      }
+    ]
+  },
+  "power glove": {
+    "ItemName": "power glove",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "titan glove",
+        "Item2": 1
+      },
+      {
+        "Item1": "feral claws",
+        "Item2": 1
+      }
+    ]
+  },
+  "red phaseblade": {
+    "ItemName": "red phaseblade",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "meteorite bar",
+        "Item2": 15
+      },
+      {
+        "Item1": "ruby",
+        "Item2": 10
+      },
+      {
+        "Item1": "anvil",
+        "Item2": 1
+      }
+    ]
+  },
+  "rocket boots": {
+    "ItemName": "rocket boots",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "ruby": {
+    "ItemName": "ruby",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "sand block": {
+    "ItemName": "sand block",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "sawmill": {
+    "ItemName": "sawmill",
+    "OutputCount": 999,
+    "Ingredients": [
+      {
+        "Item1": "work bench",
+        "Item2": 1
+      },
+      {
+        "Item1": "wood",
+        "Item2": 10
+      },
+      {
+        "Item1": "iron bar",
+        "Item2": 2
+      },
+      {
+        "Item1": "chain",
+        "Item2": 1
+      }
+    ]
+  },
+  "shark fin": {
+    "ItemName": "shark fin",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "{ Drop: \"Shark\", Chance : 98 }",
+        "Item2": 1
+      }
+    ]
+  },
+  "shroomite bar": {
+    "ItemName": "shroomite bar",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "chlorophyte bar",
+        "Item2": 1
+      },
+      {
+        "Item1": "glowing mushroom",
+        "Item2": 15
+      },
+      {
+        "Item1": "autohammer",
+        "Item2": 1
+      }
+    ]
+  },
+  "shroomite breastplate": {
+    "ItemName": "shroomite breastplate",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "shroomite bar",
+        "Item2": 24
+      },
+      {
+        "Item1": "orichalcum anvil",
+        "Item2": 1
+      }
+    ]
+  },
+  "shroomite digging claw": {
+    "ItemName": "shroomite digging claw",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "shroomite bar",
+        "Item2": 18
+      },
+      {
+        "Item1": "orichalcum anvil",
+        "Item2": 1
+      }
+    ]
+  },
+  "shroomite headgear": {
+    "ItemName": "shroomite headgear",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "shroomite bar",
+        "Item2": 12
+      },
+      {
+        "Item1": "orichalcum anvil",
+        "Item2": 1
+      }
+    ]
+  },
+  "shroomite helmet": {
+    "ItemName": "shroomite helmet",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "shroomite bar",
+        "Item2": 12
+      },
+      {
+        "Item1": "orichalcum anvil",
+        "Item2": 1
+      }
+    ]
+  },
+  "shroomite leggings": {
+    "ItemName": "shroomite leggings",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "shroomite bar",
+        "Item2": 18
+      },
+      {
+        "Item1": "orichalcum anvil",
+        "Item2": 1
+      }
+    ]
+  },
+  "shroomite mask": {
+    "ItemName": "shroomite mask",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "shroomite bar",
+        "Item2": 12
+      },
+      {
+        "Item1": "orichalcum anvil",
+        "Item2": 1
+      }
+    ]
+  },
+  "silk": {
+    "ItemName": "silk",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "cobweb",
+        "Item2": 7
+      }
+    ]
+  },
+  "soul of flight": {
+    "ItemName": "soul of flight",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "soul of might": {
+    "ItemName": "soul of might",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "{ Drop: \"The Destroyer\", Chance:100, Count1:20, Count2:40 }",
+        "Item2": 1
+      }
+    ]
+  },
+  "spectre boots": {
+    "ItemName": "spectre boots",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "hermes boots",
+        "Item2": 1
+      },
+      {
+        "Item1": "rocket boots",
+        "Item2": 1
+      }
+    ]
+  },
+  "spelunker potion": {
+    "ItemName": "spelunker potion",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "bottled water",
+        "Item2": 1
+      },
+      {
+        "Item1": "blinkroot",
+        "Item2": 1
+      },
+      {
+        "Item1": "moonglow",
+        "Item2": 1
+      },
+      {
+        "Item1": "platinum ore",
+        "Item2": 1
+      }
+    ]
+  },
+  "stone block": {
+    "ItemName": "stone block",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "tissue sample": {
+    "ItemName": "tissue sample",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "titan glove": {
+    "ItemName": "titan glove",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "hard mode, mimic, 14.29%",
+        "Item2": 1
+      }
+    ]
+  },
+  "titanium bar": {
+    "ItemName": "titanium bar",
+    "OutputCount": 1,
+    "Ingredients": [
+      {
+        "Item1": "titanium ore",
+        "Item2": 5
+      },
+      {
+        "Item1": "titanium forge",
+        "Item2": 1
+      }
+    ]
+  },
+  "titanium forge": {
+    "ItemName": "titanium forge",
+    "OutputCount": 999,
+    "Ingredients": [
+      {
+        "Item1": "titanium ore",
+        "Item2": 30
+      },
+      {
+        "Item1": "hellforge",
+        "Item2": 1
+      }
+    ]
+  },
+  "titanium ore": {
+    "ItemName": "titanium ore",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "torch": {
+    "ItemName": "torch",
+    "OutputCount": 3,
+    "Ingredients": [
+      {
+        "Item1": "gel",
+        "Item2": 1
+      },
+      {
+        "Item1": "wood",
+        "Item2": 1
+      }
+    ]
+  },
+  "wood": {
+    "ItemName": "wood",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "work bench": {
+    "ItemName": "work bench",
+    "OutputCount": 999,
+    "Ingredients": [
+      {
+        "Item1": "wood",
+        "Item2": 10
+      }
+    ]
+  },
+  "{ Drop: \"Shark\", Chance : 98 }": {
+    "ItemName": "{ Drop: \"Shark\", Chance : 98 }",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "{ Drop: \"The Destroyer\", Chance:100, Count1:20, Count2:40 }": {
+    "ItemName": "{ Drop: \"The Destroyer\", Chance:100, Count1:20, Count2:40 }",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "{ Trade: \"Arms Dealer\"; Gold : \"20\" }": {
+    "ItemName": "{ Trade: \"Arms Dealer\"; Gold : \"20\" }",
+    "OutputCount": 1,
+    "Ingredients": []
+  },
+  "{ Trade: \"Arms Dealer\"; Gold : \"35\" }": {
+    "ItemName": "{ Trade: \"Arms Dealer\"; Gold : \"35\" }",
+    "OutputCount": 1,
+    "Ingredients": []
+  }
 }

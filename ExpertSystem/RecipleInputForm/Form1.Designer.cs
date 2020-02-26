@@ -100,7 +100,7 @@
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 5;
             this.button1.TabStop = false;
-            this.button1.Text = "button1";
+            this.button1.Text = "Expand";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // panel1

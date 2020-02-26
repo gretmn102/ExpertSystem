@@ -3,38 +3,6 @@
 open System.Windows.Forms
 open System
 
-(*
-module realSample =
-    /// <summary>
-    /// Заменяет название предметов на [a, b, c, ...]
-    /// </summary>
-    /// <param name="reciples"></param>
-    let simples reciples =
-        let reciples = Map.toList reciples
-        let rec f acc i = function
-            | [] -> List.rev acc
-            | h::t -> f ((h, char i |> string)::acc) (i + 1) t
-        let dic = List.map fst reciples |> f [] (int 'a') |> Map.ofList
-        reciples
-        |> List.map (fun (name, (made, xs)) -> dic.[name], (made, List.map (fun (x, need) -> Map.find x dic, need) xs))
-        |> Map.ofList
-    let reciples =
-        ["alchemy engine", (1, ["boards", 4; "cut stone", 2; "electrical doodad", 2]);
-         "boards", (1, ["log", 4]);
-         "cut stone", (1, ["rocks", 3]);
-         "electrical doodad", (1, ["boards", 4; "gold nugged", 2; "cut stone", 1]);
-         "log", (1, []);
-         "rocks", (1, []);
-         "gold nugged", (1, [])] |> Map.ofList
-    //let reciples2 = simples reciples
-    let startRes = [ "b", 8; ] |> Map.ofList
-    let req = "alchemy engine", 1
-    Expander.expand reciples req |> Tree.visualize |> printfn "%s"
-    let (res, result) = Expander.expand2 reciples startRes req
-    Expander.assemble reciples (Map.ofList res) result
-    |> ignore
-    *)
-
 module serial =
     open System.IO
     open System.Runtime.Serialization.Formatters.Binary
@@ -53,7 +21,7 @@ module serial =
         let byteArr = serializeThing thing
         use fileStream = new FileStream(path, FileMode.Create)
         fileStream.Write(byteArr, 0, byteArr.Length)
-type Reciples = string Expander.Reciples
+type Reciples = Expander.Reciples
 open FsharpMyExtension
 module form = 
     let form = new RecipleInputForm.Form1()
@@ -61,7 +29,7 @@ module form =
     let mutable reciples : Reciples =
         if System.IO.File.Exists bdpath then
             Json.desf bdpath
-        else Expander.Reciples Map.empty
+        else Map.empty
     let txbIngrs = 
         let indent = 40
         let loc x y (c:Control) = c.Location <- Drawing.Point(x, y)
@@ -82,7 +50,6 @@ module form =
         txbIngrs
     do
         let names =
-            let (Expander.Reciples reciples) = reciples
             reciples |> Map.toArray |> Array.map fst
         form.txbName.AutoCompleteCustomSource.AddRange names
         txbIngrs |> List.iter (fun (txb, _) -> txb.AutoCompleteCustomSource.AddRange names)
@@ -118,15 +85,21 @@ module form =
                 |> List.map(fun (txb, num) -> txb.Text, int num.Text)
             //let res = form.txbName.Text, (int form.numMake.Text, ingrs)
             form.lstUnknown.Items.Remove form.txbName.Text
-            let (Expander.Reciples reciples') = reciples
+            let reciples' = reciples
             ingrs
             |> List.iter (fun (x, _) ->
                 if not <| Map.containsKey x reciples' then
                     form.lstUnknown.Items.Add x |> ignore)
             
+            let reciple =
+                {
+                    Expander.Ingredients = ingrs
+                    Expander.ItemName = form.txbName.Text
+                    Expander.OutputCount = int form.numMake.Text
+                }
             reciples <-
-                Map.add form.txbName.Text (int form.numMake.Text, ingrs) reciples'
-                |> Expander.Reciples
+                Map.add form.txbName.Text reciple reciples'
+                // |> Expander.Reciples
 
             autoComleteAdd form.txbName.Text
             clear ())
@@ -146,7 +119,6 @@ module form =
     form.FormClosing.Add(fun _ ->
         Json.serf bdpath reciples
 
-        let (Expander.Reciples reciples) = reciples
         Seq.map (fun (KeyValue(k, v)) -> sprintf "%A" (k, v)) reciples
         |> uncurry System.IO.File.WriteAllLines "reciplesRaw.txt"
     )

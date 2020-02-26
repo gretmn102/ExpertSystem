@@ -16,7 +16,7 @@
 open FsharpMyExtension
 open FsharpMyExtension.Tree
 
-// Есть куча всякой всячины, и это всё можно сочетать между собой по заданным рецептам и получать новые вещи. Также у каждой вещи — фиксированная цена. Вопрос: как всё это добро скомбинировать так, чтобы получить как можно больше прибыли?
+// Есть куча всякой всячины, и это всё можно сочетать между собой по заданным рецептам и получать новые вещи. Также у каждой вещи — фиксированная цена. Вопрос: как всё это добро скомбинировать, чтобы получить как можно больше прибыли?
 // Для решения используется симплекс-метод.
 
 // Как это решить в лоб?
@@ -27,9 +27,92 @@ open FsharpMyExtension.Tree
 
 // Как можно уменьшить заведомо убыточные рецепты? Сложить цены всех составляющих и сравнить с ценой итогового продукта.
 
-// Первоначально задача ставилась для Starbound, и звучала она так: есть куча еды, из которой можно изготовить много всякого и продать за какую-то цену. Вопрос: что из этого нужно изготовить, чтобы извлечь как можно больше прибыли?
+// Первоначально задача ставилась для Starbound и звучала так: есть куча еды, из которой можно изготовить много всякого и продать за какую-то цену. Вопрос: что из этого нужно изготовить, чтобы извлечь как можно больше прибыли?
 
-// type ReciplesType = (string * (int * (string * int) list)) list
+type Cost = int
+
+module BruteSolve =
+    open Expander
+    let splitCost costName (reciplesDb:Program.Reciples) =
+        reciplesDb
+        |> Map.mapFold (fun costs name reciple ->
+            let costs', rests =
+                List.partition (fst >> (=) costName) reciple.Ingredients
+            let costs =
+                match costs' with
+                | [_, cost] -> Map.add name (cost:Cost) costs
+                | [] -> costs
+                | xs -> failwithf "many items with '%s':\n%A" costName xs
+
+            let reciple = { reciple with Ingredients = rests }
+            reciple, costs) Map.empty
+        |> mapFst (fun x -> Map.remove costName x)
+
+    let brute reciples (costs:Map<ItemName,int>) (stock:Map<ItemName, HaveInStock>) =
+        let rec loop (stock:Map<ItemName, HaveInStock>) =
+            let rec remFromStock (stock:Map<ItemName, HaveInStock>) = function
+                | (name, count)::xs ->
+                    match Map.tryFind name stock with
+                    | Some haveInStock ->
+                        let diff = haveInStock - count
+                        if diff < 0 then None
+                        else
+                            let stock = Map.add name diff stock
+                            remFromStock stock xs
+                    | None -> None
+                | [] -> Some stock
+
+            reciples
+            |> Map.toList
+            |> List.choose (fun (_, reciple) ->
+                if List.isEmpty reciple.Ingredients then None
+                else
+                    match remFromStock stock reciple.Ingredients with
+                    | Some stock ->
+                        stock
+                        |> Map.addOrMod reciple.ItemName reciple.OutputCount
+                            ((+) reciple.OutputCount)
+                        |> fun stock ->
+                            let profit = 
+                                stock
+                                |> Map.fold (fun acc name inStock ->
+                                    match Map.tryFind name costs with
+                                    | Some cost -> 
+                                        cost * inStock + acc
+                                    | None ->
+                                        // printfn "%A" name
+                                        acc
+                                        ) 0
+                            Node((reciple.ItemName, profit), loop stock)
+                            |> Some
+                    | None -> None
+            )
+        loop stock
+    let test () =
+        let reciples, costs =
+            let reciplesDb =
+                let path = @"Info\OldDBs\starbound.json"
+                // let path = @"ExpertSystem\ExpertSystem\bin\Debug\net461\bd.json"
+                let db:Program.Reciples = Json.desf path
+                db
+            splitCost "gold" reciplesDb
+        let inputExample =
+            [
+            //  ("какао-стручок", 19);
+            //  ("рис", 102);
+            //  ("сахар", 22);
+            //  ("пшеница", 7);
+             ("кофейные зерна", 2);
+             ("морковь", 2);
+            // ("кукуруза", 4); ("яйцо", 2);
+            //  ("молоко", 2); ("жемчужный горох", 2); ("картофель", 17); ("томат", 4);
+            //  ("сочносливка", 5); ("ананас", 1)
+            ]
+            |> Map.ofList
+        let res = brute reciples costs inputExample
+        Node(("", 0), res) |> Tree.visualize (sprintf "%A")
+        res |> Tree.unpack
+
 type ProductName = string
 type ProductIngr = ProductName * int
 type 'Price Reciple =
@@ -47,7 +130,7 @@ let expand reciples =
         let p, ingrs =
             let { ProdCount = p; Ingrs = ingrs } = Map.find name reciples // crafts.[name]
             let coeff = (float count/ float p) |> ceil |> int
-            coeff*p, ingrs |> List.map (function n, c -> n, coeff * c)
+            coeff * p, ingrs |> List.map (function n, c -> n, coeff * c)
         if valid last (List.map fst ingrs) then
             Tree.Node((name, p), List.map (expa (name::last)) ingrs)
         else Tree.Node(curr, [])
@@ -65,20 +148,21 @@ assert
 
 let toNewReciples costName (reciplesDb:Program.Reciples) =
     reciplesDb
-    |> fun (Expander.Reciples reciples) -> Map.toList reciples
-    |> List.map (fun (x, (count, xs)) ->
+    |> Map.toList
+    |> List.map (fun (name, reciple) ->
+        let count, xs = reciple.OutputCount, reciple.Ingredients
         List.partition (fst >> (=) costName) xs
         |> (function
-            | [], _ -> None, (x, (count, xs))
-            | [_,n], xs -> Some n, (x, (count, xs))
+            | [], _ -> None, (name, (count, xs))
+            | [_,n], xs -> Some n, (name, (count, xs))
             | x -> failwithf "many items with '%s':\n%A" costName x))
     |> List.fold (fun st (g, (name,(count, ingr))) ->
         let v = { Name = name; Price = g; ProdCount = count; Ingrs = ingr }
         Map.add name v st ) Map.empty
 
 let reciplesDb =
-    // let path = @"Info\OldDBs\starbound.json"
-    let path = @"ExpertSystem\ExpertSystem\bin\Debug\net461\bd.json"
+    let path = @"Info\OldDBs\starbound.json"
+    // let path = @"ExpertSystem\ExpertSystem\bin\Debug\net461\bd.json"
     let db:Program.Reciples = Json.desf path
     db
 let newReciples = toNewReciples "gold" reciplesDb
@@ -119,8 +203,7 @@ let recip =
 // recip  |> print |> Clipboard.setText
 
 
-/// Количество имеющихся продуктов
-type HaveInStock = int
+
 let getInput inputPath =
     System.IO.File.ReadAllLines inputPath
     |> List.ofArray
@@ -134,7 +217,7 @@ let getInput inputPath =
                         (function null -> false | _ -> true) (Seq.cast<System.Text.RegularExpressions.Match>
                          >> Seq.sumBy(fun x -> int x.Value))
                         (fun _ -> failwithf "%A" name)
-                (name:ProductName), (count:HaveInStock)
+                (name:ProductName), (count:Expander.HaveInStock)
             | x -> failwithf "%A" x)
     //|> List.head |> fst |> flip Map.tryFind reciples
     |> fun xs ->
@@ -163,7 +246,7 @@ let inputExample =
      ("кофейные зерна", 2); ("морковь", 2); ("кукуруза", 4); ("яйцо", 2);
      ("молоко", 2); ("жемчужный горох", 2); ("картофель", 17); ("томат", 4);
      ("сочносливка", 5); ("ананас", 1)]
-let input : (ProductName * HaveInStock) list =
+let input : (ProductName * Expander.HaveInStock) list =
     getInput inputPath
     // [ "e", 3; "f", 10; "c", 20 ]
 type ProductCost = int
@@ -248,10 +331,15 @@ let readFromMaple (m:Map<ProductName, VarName>) =
     |> List.filter (snd >> ((<>) 0))
 
 let expand3 (xs:(ProductName * _) list) =
-    let (Expander.Reciples reciples) = reciplesDb
     let reciples =
-        Map.add "крафт" (1, xs) reciples
-        |> Expander.Reciples
+        let reciple =
+            {
+                Expander.Ingredients = xs
+                Expander.ItemName = "крафт"
+                Expander.OutputCount = 1
+            }
+        Map.add "крафт" reciple reciplesDb
+        // |> Expander.Reciples
     Expander.expand2Start reciples Map.empty ("крафт", 1)
 
 let m = convertToMaple ()
@@ -381,7 +469,7 @@ module MySolve =
         [0; 1; 1; 1; 0; 0; 100]
         [0; 6; 3; 0; 1; 0; 360]
         [0; 1; 2; 0; 0; 1; 120]
-        [1;-2;-3; 0; 0; 0; 0 ]
+        [1;-2;-3; 0; 0; 0; 0  ]
     ] |> List.map (List.map float >> Array.ofList) |> Array.ofList |> simplexMaximize
 
     //recip |> Seq.map (fun (KeyValue(k, x)) -> x.Ingr   ))
